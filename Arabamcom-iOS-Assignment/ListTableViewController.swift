@@ -36,8 +36,8 @@ class ListTableViewController: UITableViewController {
             isPagination = true
             take = 10
             VehicleClient.getListVehicle(sort: 0, sortDirection: 0, skip: pagination ? allVehicles.count : nil, take: take) {[weak self] (data, error) in
-            print("Getting List Error: \(String(describing: error?.localizedDescription))")
-            guard let self = self else {return}
+                print("Getting List Error: \(String(describing: error?.localizedDescription))")
+                guard let self = self else {return}
                 
                 defer {
                     if pagination {
@@ -45,16 +45,16 @@ class ListTableViewController: UITableViewController {
                     }
                 }
                 
-            guard let newData = data else {
-                print("Data error: \(String(describing: error?.localizedDescription))")
-                return
+                guard let newData = data else {
+                    print("Data error: \(String(describing: error?.localizedDescription))")
+                    return
+                }
+                
+                guard !self.isPagination || !self.allVehicles.contains(where: {$0.id == newData.first?.id}) else {return}
+                self.allVehicles.append(contentsOf: newData)
+                
+                
             }
-          
-            guard !self.isPagination || !self.allVehicles.contains(where: {$0.id == newData.first?.id}) else {return}
-            self.allVehicles.append(contentsOf: newData)
-            
-          
-          }
         }
     }
 
@@ -93,6 +93,14 @@ class ListTableViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    private func createSpinnerFooter() -> UIView {
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+        let spinner = UIActivityIndicatorView()
+        spinner.center = footerView.center
+        footerView.addSubview(spinner)
+        spinner.startAnimating()
+        return footerView
+    }
     
     
 }
@@ -106,8 +114,12 @@ extension ListTableViewController {
 
             guard !isPagination && !allVehicles.isEmpty else {return}
             isPagination = true
-           getLists(pagination: true)
-               
+            self.tableView.tableFooterView = self.createSpinnerFooter()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.getLists(pagination: true)
+                self.tableView.tableFooterView = nil
+            }
+        
         }
     }
 }
