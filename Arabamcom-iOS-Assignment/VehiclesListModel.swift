@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias VehiclesModel = [VehiclesListModel]
+typealias VehiclesListModelArray = [VehiclesListModel]
 // MARK: - VehiclesListModelElement
 struct VehiclesListModel: Codable {
     var id: Int?

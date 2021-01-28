@@ -20,8 +20,23 @@ class ListTableViewController: UITableViewController {
         
         tableView.register(ListTableViewCell.nib(), forCellReuseIdentifier: ListTableViewCell.identifier)
         configureNavigationBar()
+        
+        getLists()
     }
     
+    //MARK: - Helper Methods
+    private func getLists(){
+        VehicleClient.getListVehicle(sort: 0, sortDirection: 0, take: 10) {[weak self] (data, error) in
+            print("Getting List Error: \(error?.localizedDescription)")
+            guard let self = self else {return}
+            
+            guard let data = data else {
+                print("Data error: \(error?.localizedDescription)")
+                return
+            }
+            debugPrint(data)
+        }
+    }
 
     // MARK: - Table view data source
 

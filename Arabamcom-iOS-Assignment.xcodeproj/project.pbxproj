@@ -17,6 +17,11 @@
 		F0EFB34825C29A24005445C7 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EFB34625C29A24005445C7 /* ListTableViewCell.xib */; };
 		F0EFB35025C2B228005445C7 /* VehicleDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB34F25C2B228005445C7 /* VehicleDetailModel.swift */; };
 		F0EFB35225C2B23E005445C7 /* VehiclesListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB35125C2B23E005445C7 /* VehiclesListModel.swift */; };
+		F0EFB35525C2B30C005445C7 /* ServiceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB35425C2B30C005445C7 /* ServiceClient.swift */; };
+		F0EFB35725C2B3D2005445C7 /* VehicleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB35625C2B3D2005445C7 /* VehicleRouter.swift */; };
+		F0EFB35925C2B715005445C7 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB35825C2B715005445C7 /* NetworkConstants.swift */; };
+		F0EFB35B25C2BDDF005445C7 /* VehicleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB35A25C2BDDF005445C7 /* VehicleClient.swift */; };
+		F0EFB35E25C2E4F9005445C7 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB35D25C2E4F9005445C7 /* ListViewModel.swift */; };
 		F9B4C28B126D3EC9723FDC6B /* Pods_Arabamcom_iOS_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE283BB4908EEB8CCD25819B /* Pods_Arabamcom_iOS_Assignment.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +41,11 @@
 		F0EFB34625C29A24005445C7 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		F0EFB34F25C2B228005445C7 /* VehicleDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailModel.swift; sourceTree = "<group>"; };
 		F0EFB35125C2B23E005445C7 /* VehiclesListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesListModel.swift; sourceTree = "<group>"; };
+		F0EFB35425C2B30C005445C7 /* ServiceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceClient.swift; sourceTree = "<group>"; };
+		F0EFB35625C2B3D2005445C7 /* VehicleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleRouter.swift; sourceTree = "<group>"; };
+		F0EFB35825C2B715005445C7 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		F0EFB35A25C2BDDF005445C7 /* VehicleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleClient.swift; sourceTree = "<group>"; };
+		F0EFB35D25C2E4F9005445C7 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +100,10 @@
 			children = (
 				F0EFB33B25C29846005445C7 /* App */,
 				F0EFB34E25C2B215005445C7 /* Models */,
+				F0EFB35325C2B2A8005445C7 /* Network */,
 				F0EFB33D25C29968005445C7 /* View Controllers */,
 				F0EFB33E25C2997C005445C7 /* Views */,
+				F0EFB35C25C2E4E8005445C7 /* ViewModels */,
 				F0EFB33C25C29959005445C7 /* View Utilities */,
 				F0EFB33525C297DA005445C7 /* Info.plist */,
 			);
@@ -157,6 +169,25 @@
 				F0EFB35125C2B23E005445C7 /* VehiclesListModel.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		F0EFB35325C2B2A8005445C7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F0EFB35425C2B30C005445C7 /* ServiceClient.swift */,
+				F0EFB35625C2B3D2005445C7 /* VehicleRouter.swift */,
+				F0EFB35825C2B715005445C7 /* NetworkConstants.swift */,
+				F0EFB35A25C2BDDF005445C7 /* VehicleClient.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		F0EFB35C25C2E4E8005445C7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F0EFB35D25C2E4F9005445C7 /* ListViewModel.swift */,
+			);
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,11 +307,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0EFB35E25C2E4F9005445C7 /* ListViewModel.swift in Sources */,
+				F0EFB35925C2B715005445C7 /* NetworkConstants.swift in Sources */,
 				F0EFB34225C299D1005445C7 /* ListTableViewController.swift in Sources */,
 				F0EFB34725C29A24005445C7 /* ListTableViewCell.swift in Sources */,
+				F0EFB35725C2B3D2005445C7 /* VehicleRouter.swift in Sources */,
 				F0EFB35225C2B23E005445C7 /* VehiclesListModel.swift in Sources */,
 				F0EFB32825C297D8005445C7 /* AppDelegate.swift in Sources */,
+				F0EFB35525C2B30C005445C7 /* ServiceClient.swift in Sources */,
 				F0EFB35025C2B228005445C7 /* VehicleDetailModel.swift in Sources */,
+				F0EFB35B25C2BDDF005445C7 /* VehicleClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
