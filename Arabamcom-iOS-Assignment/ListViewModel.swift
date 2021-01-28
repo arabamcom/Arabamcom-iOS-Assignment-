@@ -11,14 +11,14 @@ import UIKit
 import Kingfisher
 
 class ListViewModel {
-    var vehicles: VehicleDetailModel
+    var vehicles: VehiclesListModel
     
-    init(vehicles: VehicleDetailModel) {
+    init(vehicles: VehiclesListModel) {
         self.vehicles = vehicles
     }
     
     var vehicleImageResourceURL: String {
-        guard let imageURL = vehicles.photos?.first else {return ""}
+        guard let imageURL = vehicles.photo else {return ""}
         let imageURLWithResolution = imageURL.replacingOccurrences(of: "{0}", with: "120x90")
         return imageURLWithResolution
     }
@@ -36,12 +36,11 @@ class ListViewModel {
     
     var price: String {
        let formatter = NumberFormatter()
-        formatter.numberStyle = .currencyPlural
-        let trLocal = Locale(identifier: "tr_TR")
-        formatter.locale = trLocal
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = "."
         guard let vehiclePrice = vehicles.price else {return ""}
-        let price = formatter.string(from: vehiclePrice as NSNumber)
-        return "\(price ?? "")"
+        guard let price = formatter.string(from: vehiclePrice as NSNumber) else {return ""}
+        return "\(price) TL"
     }
 }
 

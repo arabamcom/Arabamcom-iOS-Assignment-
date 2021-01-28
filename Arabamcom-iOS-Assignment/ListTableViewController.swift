@@ -11,7 +11,7 @@ import UIKit
 class ListTableViewController: UITableViewController {
     
     //MARK: - Properties
-    var allVehicles: VehiclesListModelArray = [] {
+    var allVehicles: [VehiclesListModel] = [] {
         didSet {
             tableView.reloadData()
         }
@@ -57,12 +57,17 @@ class ListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as! ListTableViewCell
-        
+        let listViewModel = ListViewModel(vehicles: allVehicles[indexPath.row])
+        listViewModel.configureListCell(with: cell)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     //MARK: - Helper Methods
