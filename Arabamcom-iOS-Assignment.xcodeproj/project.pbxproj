@@ -8,22 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		F0EFB32825C297D8005445C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB32725C297D8005445C7 /* AppDelegate.swift */; };
-		F0EFB32A25C297D8005445C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB32925C297D8005445C7 /* SceneDelegate.swift */; };
-		F0EFB32C25C297D8005445C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB32B25C297D8005445C7 /* ViewController.swift */; };
 		F0EFB32F25C297D8005445C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EFB32D25C297D8005445C7 /* Main.storyboard */; };
 		F0EFB33125C297DA005445C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0EFB33025C297DA005445C7 /* Assets.xcassets */; };
 		F0EFB33425C297DA005445C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EFB33225C297DA005445C7 /* LaunchScreen.storyboard */; };
+		F0EFB34225C299D1005445C7 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB34025C299D1005445C7 /* ListTableViewController.swift */; };
+		F0EFB34325C299D1005445C7 /* ListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EFB34125C299D1005445C7 /* ListTableViewController.xib */; };
+		F0EFB34725C29A24005445C7 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB34525C29A24005445C7 /* ListTableViewCell.swift */; };
+		F0EFB34825C29A24005445C7 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EFB34625C29A24005445C7 /* ListTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F0EFB32425C297D8005445C7 /* Arabamcom-iOS-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arabamcom-iOS-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EFB32725C297D8005445C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F0EFB32925C297D8005445C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F0EFB32B25C297D8005445C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F0EFB32E25C297D8005445C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0EFB33025C297DA005445C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0EFB33325C297DA005445C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0EFB33525C297DA005445C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0EFB34025C299D1005445C7 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		F0EFB34125C299D1005445C7 /* ListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewController.xib; sourceTree = "<group>"; };
+		F0EFB34525C29A24005445C7 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		F0EFB34625C29A24005445C7 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,65 @@
 		F0EFB32625C297D8005445C7 /* Arabamcom-iOS-Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				F0EFB32725C297D8005445C7 /* AppDelegate.swift */,
-				F0EFB32925C297D8005445C7 /* SceneDelegate.swift */,
-				F0EFB32B25C297D8005445C7 /* ViewController.swift */,
-				F0EFB32D25C297D8005445C7 /* Main.storyboard */,
-				F0EFB33025C297DA005445C7 /* Assets.xcassets */,
-				F0EFB33225C297DA005445C7 /* LaunchScreen.storyboard */,
+				F0EFB33B25C29846005445C7 /* App */,
+				F0EFB33D25C29968005445C7 /* View Controllers */,
+				F0EFB33E25C2997C005445C7 /* Views */,
+				F0EFB33C25C29959005445C7 /* View Utilities */,
 				F0EFB33525C297DA005445C7 /* Info.plist */,
 			);
 			path = "Arabamcom-iOS-Assignment";
+			sourceTree = "<group>";
+		};
+		F0EFB33B25C29846005445C7 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F0EFB32725C297D8005445C7 /* AppDelegate.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		F0EFB33C25C29959005445C7 /* View Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F0EFB32D25C297D8005445C7 /* Main.storyboard */,
+				F0EFB33025C297DA005445C7 /* Assets.xcassets */,
+				F0EFB33225C297DA005445C7 /* LaunchScreen.storyboard */,
+			);
+			name = "View Utilities";
+			sourceTree = "<group>";
+		};
+		F0EFB33D25C29968005445C7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0EFB33F25C29996005445C7 /* List VC */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F0EFB33E25C2997C005445C7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F0EFB34425C29A0B005445C7 /* List Cell */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F0EFB33F25C29996005445C7 /* List VC */ = {
+			isa = PBXGroup;
+			children = (
+				F0EFB34025C299D1005445C7 /* ListTableViewController.swift */,
+				F0EFB34125C299D1005445C7 /* ListTableViewController.xib */,
+			);
+			name = "List VC";
+			sourceTree = "<group>";
+		};
+		F0EFB34425C29A0B005445C7 /* List Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F0EFB34525C29A24005445C7 /* ListTableViewCell.swift */,
+				F0EFB34625C29A24005445C7 /* ListTableViewCell.xib */,
+			);
+			name = "List Cell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +182,8 @@
 				F0EFB33425C297DA005445C7 /* LaunchScreen.storyboard in Resources */,
 				F0EFB33125C297DA005445C7 /* Assets.xcassets in Resources */,
 				F0EFB32F25C297D8005445C7 /* Main.storyboard in Resources */,
+				F0EFB34325C299D1005445C7 /* ListTableViewController.xib in Resources */,
+				F0EFB34825C29A24005445C7 /* ListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +194,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0EFB32C25C297D8005445C7 /* ViewController.swift in Sources */,
+				F0EFB34225C299D1005445C7 /* ListTableViewController.swift in Sources */,
+				F0EFB34725C29A24005445C7 /* ListTableViewCell.swift in Sources */,
 				F0EFB32825C297D8005445C7 /* AppDelegate.swift in Sources */,
-				F0EFB32A25C297D8005445C7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
