@@ -16,6 +16,7 @@ class ListTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
+    var isPagination = false
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -24,20 +25,36 @@ class ListTableViewController: UITableViewController {
         tableView.register(ListTableViewCell.nib(), forCellReuseIdentifier: ListTableViewCell.identifier)
         configureNavigationBar()
         
-        getLists()
+        getLists(pagination: true)
     }
     
     //MARK: - Helper Methods
-    private func getLists(){
-        VehicleClient.getListVehicle(sort: 0, sortDirection: 0, take: 10) {[weak self] (data, error) in
-            print("Getting List Error: \(error?.localizedDescription)")
+    private func getLists(pagination: Bool = false){
+        
+        var take = 0
+        if pagination {
+            isPagination = true
+            take = 10
+            VehicleClient.getListVehicle(sort: 0, sortDirection: 0, skip: pagination ? allVehicles.count : nil, take: take) {[weak self] (data, error) in
+            print("Getting List Error: \(String(describing: error?.localizedDescription))")
             guard let self = self else {return}
-            
-            guard let data = data else {
-                print("Data error: \(error?.localizedDescription)")
+                
+                defer {
+                    if pagination {
+                        self.isPagination = false
+                    }
+                }
+                
+            guard let newData = data else {
+                print("Data error: \(String(describing: error?.localizedDescription))")
                 return
             }
-            self.allVehicles = data
+          
+            guard !self.isPagination || !self.allVehicles.contains(where: {$0.id == newData.first?.id}) else {return}
+            self.allVehicles.append(contentsOf: newData)
+            
+          
+          }
         }
     }
 
@@ -77,4 +94,20 @@ class ListTableViewController: UITableViewController {
     }
     
     
+    
+}
+
+//MARK: - Pagination
+
+extension ListTableViewController {
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let position = scrollView.contentOffset.y
+        if position > (tableView.contentSize.height - 50 - scrollView.frame.size.height) {
+
+            guard !isPagination && !allVehicles.isEmpty else {return}
+            isPagination = true
+           getLists(pagination: true)
+               
+        }
+    }
 }

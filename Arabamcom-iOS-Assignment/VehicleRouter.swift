@@ -20,6 +20,7 @@ enum VehicleRouter: URLRequestConvertible {
                         maxDate: String? = nil,
                         minYear: Int? = nil,
                         maxYear: Int? = nil,
+                        skip: Int? = nil,
                         take: Int? = 10)
    
     
@@ -52,20 +53,24 @@ enum VehicleRouter: URLRequestConvertible {
                            maxDate: let maxDate,
                            minYear: let minYear,
                            maxYear: let maxYear,
+                           skip: let skip,
                            take: let take):
             
             var tmpParameters: [String: Any] = ["sort": sort, "sortDirection": sortDirection, "take": take]
-            if minDate != nil {
-                tmpParameters["minDate"] = minDate!
+            if let skip = skip {
+                tmpParameters["skip"] = skip
             }
-            if maxDate != nil {
-                tmpParameters["maxDate"] = maxDate!
+            if let minDate = minDate {
+                tmpParameters["minDate"] = minDate
             }
-            if minYear != nil {
-                tmpParameters["minYear"] = minYear!
+            if let maxDate = maxDate {
+                tmpParameters["maxDate"] = maxDate
             }
-            if maxYear != nil {
-                tmpParameters["maxYear"] = maxYear!
+            if let minYear = minYear {
+                tmpParameters["minYear"] = minYear
+            }
+            if let maxYear = maxYear {
+                tmpParameters["maxYear"] = maxYear
             }
             return tmpParameters
             
