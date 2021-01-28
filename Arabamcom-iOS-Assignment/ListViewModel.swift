@@ -34,7 +34,7 @@ class ListViewModel {
         return "\(city), \(town)"
     }
     
-    var prive: String {
+    var price: String {
        let formatter = NumberFormatter()
         formatter.numberStyle = .currencyPlural
         let trLocal = Locale(identifier: "tr_TR")
@@ -43,5 +43,15 @@ class ListViewModel {
         let price = formatter.string(from: vehiclePrice as NSNumber)
         return "\(price ?? "")"
     }
-    
+}
+
+extension ListViewModel {
+    func configureListCell(with cell: ListTableViewCell){
+        cell.titleLabel.text = title
+        cell.locationLabel.text = locationInfo
+        cell.priceLabel.text = price
+        guard let url = URL(string: vehicleImageResourceURL) else {return}
+        let resource = ImageResource(downloadURL: url)
+        cell.vehicleImageView.kf.setImage(with: resource)
+    }
 }

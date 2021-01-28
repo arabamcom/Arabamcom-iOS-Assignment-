@@ -10,9 +10,12 @@ import UIKit
 
 class ListTableViewController: UITableViewController {
     
-
     //MARK: - Properties
-    
+    var allVehicles: VehiclesListModelArray = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -34,7 +37,7 @@ class ListTableViewController: UITableViewController {
                 print("Data error: \(error?.localizedDescription)")
                 return
             }
-            debugPrint(data)
+            self.allVehicles = data
         }
     }
 
@@ -47,14 +50,14 @@ class ListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        //TODO: Number of Cells
-        return 1
+        
+        return allVehicles.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as! ListTableViewCell
-
+        
         return cell
     }
     
