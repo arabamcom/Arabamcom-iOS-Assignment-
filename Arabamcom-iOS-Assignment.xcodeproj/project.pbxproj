@@ -15,9 +15,13 @@
 		F0EFB34325C299D1005445C7 /* ListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EFB34125C299D1005445C7 /* ListTableViewController.xib */; };
 		F0EFB34725C29A24005445C7 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB34525C29A24005445C7 /* ListTableViewCell.swift */; };
 		F0EFB34825C29A24005445C7 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EFB34625C29A24005445C7 /* ListTableViewCell.xib */; };
+		F9B4C28B126D3EC9723FDC6B /* Pods_Arabamcom_iOS_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE283BB4908EEB8CCD25819B /* Pods_Arabamcom_iOS_Assignment.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E6DC78C9D85AEA1EDFBB0BA /* Pods-Arabamcom-iOS-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arabamcom-iOS-Assignment.debug.xcconfig"; path = "Target Support Files/Pods-Arabamcom-iOS-Assignment/Pods-Arabamcom-iOS-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
+		57995A92BF228C9E9FC0EB40 /* Pods-Arabamcom-iOS-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arabamcom-iOS-Assignment.release.xcconfig"; path = "Target Support Files/Pods-Arabamcom-iOS-Assignment/Pods-Arabamcom-iOS-Assignment.release.xcconfig"; sourceTree = "<group>"; };
+		AE283BB4908EEB8CCD25819B /* Pods_Arabamcom_iOS_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arabamcom_iOS_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EFB32425C297D8005445C7 /* Arabamcom-iOS-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arabamcom-iOS-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EFB32725C297D8005445C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0EFB32E25C297D8005445C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,17 +39,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B4C28B126D3EC9723FDC6B /* Pods_Arabamcom_iOS_Assignment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32C8CED56F4C6DAFCFA15326 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E6DC78C9D85AEA1EDFBB0BA /* Pods-Arabamcom-iOS-Assignment.debug.xcconfig */,
+				57995A92BF228C9E9FC0EB40 /* Pods-Arabamcom-iOS-Assignment.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F0B9D9B9ABCB2D4CD3425060 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE283BB4908EEB8CCD25819B /* Pods_Arabamcom_iOS_Assignment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F0EFB31B25C297D8005445C7 = {
 			isa = PBXGroup;
 			children = (
 				F0EFB32625C297D8005445C7 /* Arabamcom-iOS-Assignment */,
 				F0EFB32525C297D8005445C7 /* Products */,
+				32C8CED56F4C6DAFCFA15326 /* Pods */,
+				F0B9D9B9ABCB2D4CD3425060 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,9 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F0EFB33825C297DA005445C7 /* Build configuration list for PBXNativeTarget "Arabamcom-iOS-Assignment" */;
 			buildPhases = (
+				4E0F54EDC7917A131CAFFDF4 /* [CP] Check Pods Manifest.lock */,
 				F0EFB32025C297D8005445C7 /* Sources */,
 				F0EFB32125C297D8005445C7 /* Frameworks */,
 				F0EFB32225C297D8005445C7 /* Resources */,
+				2D6C1A29A90E7792FA09B0D6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,6 +215,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D6C1A29A90E7792FA09B0D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Arabamcom-iOS-Assignment/Pods-Arabamcom-iOS-Assignment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Arabamcom-iOS-Assignment/Pods-Arabamcom-iOS-Assignment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Arabamcom-iOS-Assignment/Pods-Arabamcom-iOS-Assignment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E0F54EDC7917A131CAFFDF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Arabamcom-iOS-Assignment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F0EFB32025C297D8005445C7 /* Sources */ = {
@@ -338,6 +407,7 @@
 		};
 		F0EFB33925C297DA005445C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E6DC78C9D85AEA1EDFBB0BA /* Pods-Arabamcom-iOS-Assignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -357,6 +427,7 @@
 		};
 		F0EFB33A25C297DA005445C7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57995A92BF228C9E9FC0EB40 /* Pods-Arabamcom-iOS-Assignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
