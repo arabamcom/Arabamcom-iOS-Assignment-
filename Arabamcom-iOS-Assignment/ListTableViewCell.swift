@@ -10,9 +10,16 @@ import UIKit
 
 class ListTableViewCell: UITableViewCell {
     //MARK: - Outlets
-    
+   
+    @IBOutlet weak var vehicleImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+        
     //MARK: Properties
 
+    public static let identifier = "ListTableViewCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,5 +32,7 @@ class ListTableViewCell: UITableViewCell {
     }
     
     //MARK: - Helper Methods
-    
+    static func nib() -> UINib {
+        return UINib(nibName: "ListTableViewCell", bundle: nil)
+    }
 }

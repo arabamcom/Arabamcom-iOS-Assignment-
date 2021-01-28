@@ -10,13 +10,15 @@ import UIKit
 
 class ListTableViewController: UITableViewController {
     
+
+    //MARK: - Properties
     
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        tableView.register(ListTableViewCell.nib(), forCellReuseIdentifier: ListTableViewCell.identifier)
         configureNavigationBar()
     }
     
@@ -30,16 +32,19 @@ class ListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        //TODO: Number of Cells
         return 1
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-       
+        let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as! ListTableViewCell
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     //MARK: - Helper Methods
