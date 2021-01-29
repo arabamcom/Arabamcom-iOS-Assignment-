@@ -8,5 +8,5 @@ target 'Arabamcom-iOS-Assignment' do
   # Pods for Arabamcom-iOS-Assignment
 	pod 'Alamofire', '~> 5.2'
 	pod 'Kingfisher', '~> 5.0'
-
+	pod 'FloatingPanel'
 end

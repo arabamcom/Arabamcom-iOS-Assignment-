@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0301ED325C4478300B16166 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0301ED125C4478300B16166 /* ContentViewController.swift */; };
+		F0301ED425C4478300B16166 /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0301ED225C4478300B16166 /* ContentViewController.xib */; };
+		F0301ED725C44B1100B16166 /* MyFloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0301ED625C44B1100B16166 /* MyFloatingPanelLayout.swift */; };
+		F0301EDA25C44BC400B16166 /* FloatingPanel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0301ED925C44BC400B16166 /* FloatingPanel+Extensions.swift */; };
+		F0301EDE25C44DEB00B16166 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0301EDC25C44DEB00B16166 /* ListViewController.swift */; };
+		F0301EDF25C44DEB00B16166 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0301EDD25C44DEB00B16166 /* ListViewController.xib */; };
 		F0EFB32825C297D8005445C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB32725C297D8005445C7 /* AppDelegate.swift */; };
 		F0EFB32F25C297D8005445C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EFB32D25C297D8005445C7 /* Main.storyboard */; };
 		F0EFB33125C297DA005445C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0EFB33025C297DA005445C7 /* Assets.xcassets */; };
 		F0EFB33425C297DA005445C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0EFB33225C297DA005445C7 /* LaunchScreen.storyboard */; };
-		F0EFB34225C299D1005445C7 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB34025C299D1005445C7 /* ListTableViewController.swift */; };
-		F0EFB34325C299D1005445C7 /* ListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EFB34125C299D1005445C7 /* ListTableViewController.xib */; };
 		F0EFB34725C29A24005445C7 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB34525C29A24005445C7 /* ListTableViewCell.swift */; };
 		F0EFB34825C29A24005445C7 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EFB34625C29A24005445C7 /* ListTableViewCell.xib */; };
 		F0EFB35025C2B228005445C7 /* VehicleDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB34F25C2B228005445C7 /* VehicleDetailModel.swift */; };
@@ -22,6 +26,8 @@
 		F0EFB35925C2B715005445C7 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB35825C2B715005445C7 /* NetworkConstants.swift */; };
 		F0EFB35B25C2BDDF005445C7 /* VehicleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB35A25C2BDDF005445C7 /* VehicleClient.swift */; };
 		F0EFB35E25C2E4F9005445C7 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB35D25C2E4F9005445C7 /* ListViewModel.swift */; };
+		F0EFB37925C420C3005445C7 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB37725C420C3005445C7 /* FilterViewController.swift */; };
+		F0EFB37A25C420C3005445C7 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EFB37825C420C3005445C7 /* FilterViewController.xib */; };
 		F9B4C28B126D3EC9723FDC6B /* Pods_Arabamcom_iOS_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE283BB4908EEB8CCD25819B /* Pods_Arabamcom_iOS_Assignment.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,14 +35,18 @@
 		3E6DC78C9D85AEA1EDFBB0BA /* Pods-Arabamcom-iOS-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arabamcom-iOS-Assignment.debug.xcconfig"; path = "Target Support Files/Pods-Arabamcom-iOS-Assignment/Pods-Arabamcom-iOS-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		57995A92BF228C9E9FC0EB40 /* Pods-Arabamcom-iOS-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Arabamcom-iOS-Assignment.release.xcconfig"; path = "Target Support Files/Pods-Arabamcom-iOS-Assignment/Pods-Arabamcom-iOS-Assignment.release.xcconfig"; sourceTree = "<group>"; };
 		AE283BB4908EEB8CCD25819B /* Pods_Arabamcom_iOS_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arabamcom_iOS_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0301ED125C4478300B16166 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		F0301ED225C4478300B16166 /* ContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
+		F0301ED625C44B1100B16166 /* MyFloatingPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFloatingPanelLayout.swift; sourceTree = "<group>"; };
+		F0301ED925C44BC400B16166 /* FloatingPanel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FloatingPanel+Extensions.swift"; sourceTree = "<group>"; };
+		F0301EDC25C44DEB00B16166 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		F0301EDD25C44DEB00B16166 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		F0EFB32425C297D8005445C7 /* Arabamcom-iOS-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arabamcom-iOS-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0EFB32725C297D8005445C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0EFB32E25C297D8005445C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0EFB33025C297DA005445C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0EFB33325C297DA005445C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F0EFB33525C297DA005445C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F0EFB34025C299D1005445C7 /* ListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
-		F0EFB34125C299D1005445C7 /* ListTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewController.xib; sourceTree = "<group>"; };
 		F0EFB34525C29A24005445C7 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		F0EFB34625C29A24005445C7 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		F0EFB34F25C2B228005445C7 /* VehicleDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailModel.swift; sourceTree = "<group>"; };
@@ -46,6 +56,8 @@
 		F0EFB35825C2B715005445C7 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		F0EFB35A25C2BDDF005445C7 /* VehicleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleClient.swift; sourceTree = "<group>"; };
 		F0EFB35D25C2E4F9005445C7 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		F0EFB37725C420C3005445C7 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		F0EFB37825C420C3005445C7 /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +79,41 @@
 				57995A92BF228C9E9FC0EB40 /* Pods-Arabamcom-iOS-Assignment.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F0301ED025C4476900B16166 /* Content VC */ = {
+			isa = PBXGroup;
+			children = (
+				F0301ED125C4478300B16166 /* ContentViewController.swift */,
+				F0301ED225C4478300B16166 /* ContentViewController.xib */,
+			);
+			name = "Content VC";
+			sourceTree = "<group>";
+		};
+		F0301ED525C44AF700B16166 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F0301ED625C44B1100B16166 /* MyFloatingPanelLayout.swift */,
+				F0301ED825C44BAA00B16166 /* Extensions */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		F0301ED825C44BAA00B16166 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F0301ED925C44BC400B16166 /* FloatingPanel+Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		F0301EDB25C44DD000B16166 /* List VC  */ = {
+			isa = PBXGroup;
+			children = (
+				F0301EDC25C44DEB00B16166 /* ListViewController.swift */,
+				F0301EDD25C44DEB00B16166 /* ListViewController.xib */,
+			);
+			name = "List VC ";
 			sourceTree = "<group>";
 		};
 		F0B9D9B9ABCB2D4CD3425060 /* Frameworks */ = {
@@ -101,6 +148,7 @@
 				F0EFB33B25C29846005445C7 /* App */,
 				F0EFB34E25C2B215005445C7 /* Models */,
 				F0EFB35325C2B2A8005445C7 /* Network */,
+				F0301ED525C44AF700B16166 /* Helpers */,
 				F0EFB33D25C29968005445C7 /* View Controllers */,
 				F0EFB33E25C2997C005445C7 /* Views */,
 				F0EFB35C25C2E4E8005445C7 /* ViewModels */,
@@ -131,7 +179,9 @@
 		F0EFB33D25C29968005445C7 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F0EFB33F25C29996005445C7 /* List VC */,
+				F0301ED025C4476900B16166 /* Content VC */,
+				F0EFB37625C4207E005445C7 /* Filter VC */,
+				F0301EDB25C44DD000B16166 /* List VC  */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -142,15 +192,6 @@
 				F0EFB34425C29A0B005445C7 /* List Cell */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		F0EFB33F25C29996005445C7 /* List VC */ = {
-			isa = PBXGroup;
-			children = (
-				F0EFB34025C299D1005445C7 /* ListTableViewController.swift */,
-				F0EFB34125C299D1005445C7 /* ListTableViewController.xib */,
-			);
-			name = "List VC";
 			sourceTree = "<group>";
 		};
 		F0EFB34425C29A0B005445C7 /* List Cell */ = {
@@ -188,6 +229,15 @@
 				F0EFB35D25C2E4F9005445C7 /* ListViewModel.swift */,
 			);
 			name = ViewModels;
+			sourceTree = "<group>";
+		};
+		F0EFB37625C4207E005445C7 /* Filter VC */ = {
+			isa = PBXGroup;
+			children = (
+				F0EFB37725C420C3005445C7 /* FilterViewController.swift */,
+				F0EFB37825C420C3005445C7 /* FilterViewController.xib */,
+			);
+			name = "Filter VC";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,8 +302,10 @@
 			files = (
 				F0EFB33425C297DA005445C7 /* LaunchScreen.storyboard in Resources */,
 				F0EFB33125C297DA005445C7 /* Assets.xcassets in Resources */,
+				F0301EDF25C44DEB00B16166 /* ListViewController.xib in Resources */,
+				F0301ED425C4478300B16166 /* ContentViewController.xib in Resources */,
 				F0EFB32F25C297D8005445C7 /* Main.storyboard in Resources */,
-				F0EFB34325C299D1005445C7 /* ListTableViewController.xib in Resources */,
+				F0EFB37A25C420C3005445C7 /* FilterViewController.xib in Resources */,
 				F0EFB34825C29A24005445C7 /* ListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,11 +361,15 @@
 			files = (
 				F0EFB35E25C2E4F9005445C7 /* ListViewModel.swift in Sources */,
 				F0EFB35925C2B715005445C7 /* NetworkConstants.swift in Sources */,
-				F0EFB34225C299D1005445C7 /* ListTableViewController.swift in Sources */,
 				F0EFB34725C29A24005445C7 /* ListTableViewCell.swift in Sources */,
+				F0301ED325C4478300B16166 /* ContentViewController.swift in Sources */,
 				F0EFB35725C2B3D2005445C7 /* VehicleRouter.swift in Sources */,
+				F0301ED725C44B1100B16166 /* MyFloatingPanelLayout.swift in Sources */,
+				F0EFB37925C420C3005445C7 /* FilterViewController.swift in Sources */,
+				F0301EDE25C44DEB00B16166 /* ListViewController.swift in Sources */,
 				F0EFB35225C2B23E005445C7 /* VehiclesListModel.swift in Sources */,
 				F0EFB32825C297D8005445C7 /* AppDelegate.swift in Sources */,
+				F0301EDA25C44BC400B16166 /* FloatingPanel+Extensions.swift in Sources */,
 				F0EFB35525C2B30C005445C7 /* ServiceClient.swift in Sources */,
 				F0EFB35025C2B228005445C7 /* VehicleDetailModel.swift in Sources */,
 				F0EFB35B25C2BDDF005445C7 /* VehicleClient.swift in Sources */,
