@@ -56,7 +56,7 @@ enum VehicleRouter: URLRequestConvertible {
                            skip: let skip,
                            take: let take):
             
-            var tmpParameters: [String: Any] = ["sort": sort, "sortDirection": sortDirection, "take": take]
+            var tmpParameters: [String: Any] = ["sort": sort as Any, "sortDirection": sortDirection as Any, "take": take as Any]
             if let skip = skip {
                 tmpParameters["skip"] = skip
             }
@@ -75,7 +75,7 @@ enum VehicleRouter: URLRequestConvertible {
             return tmpParameters
             
         case .getVehicleDetail(id: let id):
-            return ["id": id]
+            return ["id": id as Any]
         
         }
     }

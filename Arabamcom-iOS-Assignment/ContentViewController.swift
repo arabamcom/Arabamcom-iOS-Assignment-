@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol ContentViewControllerDelegate: class {
+    func sortChanged(sortDirection: Int, sortType: Int)
+    
+}
+
 class ContentViewController: UIViewController {
     
     //MARK: - Outlets
@@ -15,14 +20,51 @@ class ContentViewController: UIViewController {
     @IBOutlet weak var sortTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var sortDirectionButton: UIButton!
      
-
+    //MARK: - Properties
+    weak var delegate: ContentViewControllerDelegate?
+    var sortDirection = true
+    var selectedSegmentIndex = 0
+    
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        sortDirectionButton.layer.cornerRadius = 10
+        sortDirectionButton.addTarget(self, action: #selector(didTappedSortDirection), for: .touchUpInside)
+        sortTypeSegmentedControl.addTarget(self, action: #selector(didChangeSegment(sender:)), for: .valueChanged)
     }
 
+    //MARK: - Helper Methods
+    @objc private func didTappedSortDirection(){
+        sortDirectionButton.isHighlighted = true
 
+        if sortDirection == true {
+            delegate?.sortChanged(sortDirection: 1, sortType: selectedSegmentIndex)
+            sortDirection.toggle()
+        } else {
+            delegate?.sortChanged(sortDirection: 0, sortType: selectedSegmentIndex)
+            sortDirection.toggle()
+        }
+        
+       
+    }
+   
     
-
+    @objc private func didChangeSegment(sender: UISegmentedControl){
+                
+        if sortDirection == false {
+            delegate?.sortChanged(sortDirection: 0, sortType: sender.selectedSegmentIndex)
+            selectedSegmentIndex = sender.selectedSegmentIndex
+            sortDirection.toggle()
+        } else if sortDirection == true {
+            delegate?.sortChanged(sortDirection: 1, sortType: sender.selectedSegmentIndex)
+            selectedSegmentIndex = sender.selectedSegmentIndex
+            sortDirection.toggle()
+        }
+        
+       
+    }
+    
+    
+    
 }

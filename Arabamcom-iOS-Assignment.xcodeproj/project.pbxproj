@@ -26,8 +26,6 @@
 		F0EFB35925C2B715005445C7 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB35825C2B715005445C7 /* NetworkConstants.swift */; };
 		F0EFB35B25C2BDDF005445C7 /* VehicleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB35A25C2BDDF005445C7 /* VehicleClient.swift */; };
 		F0EFB35E25C2E4F9005445C7 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB35D25C2E4F9005445C7 /* ListViewModel.swift */; };
-		F0EFB37925C420C3005445C7 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB37725C420C3005445C7 /* FilterViewController.swift */; };
-		F0EFB37A25C420C3005445C7 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0EFB37825C420C3005445C7 /* FilterViewController.xib */; };
 		F9B4C28B126D3EC9723FDC6B /* Pods_Arabamcom_iOS_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE283BB4908EEB8CCD25819B /* Pods_Arabamcom_iOS_Assignment.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,8 +54,6 @@
 		F0EFB35825C2B715005445C7 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		F0EFB35A25C2BDDF005445C7 /* VehicleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleClient.swift; sourceTree = "<group>"; };
 		F0EFB35D25C2E4F9005445C7 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
-		F0EFB37725C420C3005445C7 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
-		F0EFB37825C420C3005445C7 /* FilterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				F0301ED025C4476900B16166 /* Content VC */,
-				F0EFB37625C4207E005445C7 /* Filter VC */,
 				F0301EDB25C44DD000B16166 /* List VC  */,
 			);
 			name = "View Controllers";
@@ -229,15 +224,6 @@
 				F0EFB35D25C2E4F9005445C7 /* ListViewModel.swift */,
 			);
 			name = ViewModels;
-			sourceTree = "<group>";
-		};
-		F0EFB37625C4207E005445C7 /* Filter VC */ = {
-			isa = PBXGroup;
-			children = (
-				F0EFB37725C420C3005445C7 /* FilterViewController.swift */,
-				F0EFB37825C420C3005445C7 /* FilterViewController.xib */,
-			);
-			name = "Filter VC";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,7 +291,6 @@
 				F0301EDF25C44DEB00B16166 /* ListViewController.xib in Resources */,
 				F0301ED425C4478300B16166 /* ContentViewController.xib in Resources */,
 				F0EFB32F25C297D8005445C7 /* Main.storyboard in Resources */,
-				F0EFB37A25C420C3005445C7 /* FilterViewController.xib in Resources */,
 				F0EFB34825C29A24005445C7 /* ListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,7 +350,6 @@
 				F0301ED325C4478300B16166 /* ContentViewController.swift in Sources */,
 				F0EFB35725C2B3D2005445C7 /* VehicleRouter.swift in Sources */,
 				F0301ED725C44B1100B16166 /* MyFloatingPanelLayout.swift in Sources */,
-				F0EFB37925C420C3005445C7 /* FilterViewController.swift in Sources */,
 				F0301EDE25C44DEB00B16166 /* ListViewController.swift in Sources */,
 				F0EFB35225C2B23E005445C7 /* VehiclesListModel.swift in Sources */,
 				F0EFB32825C297D8005445C7 /* AppDelegate.swift in Sources */,

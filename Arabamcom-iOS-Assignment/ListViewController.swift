@@ -30,15 +30,14 @@ class ListViewController: UIViewController {
         configureNavigationBar()
         getLists(pagination: true)
         configureContentVC()
+        contentVC.delegate = self
     }
     
     //MARK: - Network
-    private func getLists(pagination: Bool = false){
-        var take = 0
+    private func getLists(pagination: Bool = false, sortDirection: Int = 0, sortType: Int? = 0){
         if pagination {
             isPagination = true
-            take = 10
-            VehicleClient.getListVehicle(sort: 0, sortDirection: 0, skip: pagination ? allVehicles.count : nil, take: take) { [weak self] (data, error) in
+            VehicleClient.getListVehicle(sort: sortType ?? 0, sortDirection: sortDirection, skip: pagination ? allVehicles.count : nil, take: 10) { [weak self] (data, error) in
                 print("Getting list error: \(String(describing: error?.localizedDescription))")
                 guard let self = self else {return}
                 
@@ -152,5 +151,12 @@ extension ListViewController: FloatingPanelControllerDelegate {
     
     func floatingPanelDidEndAttracting(_ fpc: FloatingPanelController) {
         fpc.contentMode = .fitToBounds
+    }
+}
+
+extension ListViewController: ContentViewControllerDelegate {
+    func sortChanged(sortDirection: Int, sortType: Int) {
+        allVehicles.removeAll()
+        getLists(pagination: true, sortDirection: sortDirection, sortType: sortType)
     }
 }
