@@ -34,14 +34,10 @@ extension Date {
     
     
     static func getMaxDate(dateSelection: DateFilterSelection) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter.string(from: dateSelection.selectedDate)
+        return FormatterManager.shared.dateFormatterForRequest(date: dateSelection.selectedDate)
     }
     
     static func getMinDate() -> String{
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter.string(from: Date())
+        return FormatterManager.shared.dateFormatterForRequest(date: Date())
     }
 }

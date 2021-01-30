@@ -67,7 +67,7 @@ class ListViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
-        navigationItem.title = "List"
+        navigationItem.title = "Liste"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -92,6 +92,13 @@ class ListViewController: UIViewController {
         fpc.delegate = self
     }
     
+    //MARK: - Navigation
+    func goDetaiVC(with id: Int){
+        let detailTableVC = DetailTableViewController()
+        detailTableVC.id = id
+        self.navigationController?.pushViewController(detailTableVC, animated: true)
+    }
+    
 }
 
 //MARK: - UITable View Delegate & Data Source
@@ -113,7 +120,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //TODO: Go detail
+        guard let selectedVehicleID = allVehicles[indexPath.row].id else {return}
+        goDetaiVC(with: selectedVehicleID)
     }
 }
 
@@ -155,4 +163,10 @@ extension ListViewController: ContentViewControllerDelegate {
         allVehicles.removeAll()
         getLists(pagination: true, sortDirection: sortDirection, sortType: sortType)
     }
+    
+//    func filteredResults(sort: Int, sortDirection: Int, minDate: String?, maxDate: String?, minYear: Int?, maxYear: Int?, skip: Int?, take: Int) {
+//        //allVehicles.removeAll()
+//        print("sort: \(sort) sortDirection: \(sortDirection) minDate: \(minDate) maxDate: \(maxDate) minYear: \(minYear) maxYear: \(maxYear) skip: \(skip) take: \(take)")
+//    }
+    
 }

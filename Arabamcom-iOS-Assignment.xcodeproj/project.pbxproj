@@ -10,6 +10,14 @@
 		F010DA4725C5568300DC5F74 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA4625C5568300DC5F74 /* UIView+Extensions.swift */; };
 		F010DA4925C56C7100DC5F74 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA4825C56C7100DC5F74 /* UIBarButtonItem+Extensions.swift */; };
 		F010DA4B25C59F0900DC5F74 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA4A25C59F0900DC5F74 /* Date+Extensions.swift */; };
+		F010DA4F25C5F84E00DC5F74 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA4D25C5F84E00DC5F74 /* DetailTableViewController.swift */; };
+		F010DA5025C5F84E00DC5F74 /* DetailTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F010DA4E25C5F84E00DC5F74 /* DetailTableViewController.xib */; };
+		F010DA5825C5FAD600DC5F74 /* CustomTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F010DA5725C5FAD600DC5F74 /* CustomTableHeaderView.xib */; };
+		F010DA5A25C5FB2E00DC5F74 /* CustomTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA5925C5FB2E00DC5F74 /* CustomTableHeaderView.swift */; };
+		F010DA5E25C5FE5700DC5F74 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA5C25C5FE5700DC5F74 /* DetailTableViewCell.swift */; };
+		F010DA5F25C5FE5700DC5F74 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F010DA5D25C5FE5700DC5F74 /* DetailTableViewCell.xib */; };
+		F010DA6225C606F500DC5F74 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA6125C606F500DC5F74 /* DetailViewModel.swift */; };
+		F010DA6525C6083500DC5F74 /* FormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA6425C6083500DC5F74 /* FormatterManager.swift */; };
 		F0301ED325C4478300B16166 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0301ED125C4478300B16166 /* ContentViewController.swift */; };
 		F0301ED425C4478300B16166 /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0301ED225C4478300B16166 /* ContentViewController.xib */; };
 		F0301ED725C44B1100B16166 /* MyFloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0301ED625C44B1100B16166 /* MyFloatingPanelLayout.swift */; };
@@ -39,6 +47,14 @@
 		F010DA4625C5568300DC5F74 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F010DA4825C56C7100DC5F74 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
 		F010DA4A25C59F0900DC5F74 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		F010DA4D25C5F84E00DC5F74 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		F010DA4E25C5F84E00DC5F74 /* DetailTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewController.xib; sourceTree = "<group>"; };
+		F010DA5725C5FAD600DC5F74 /* CustomTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableHeaderView.xib; sourceTree = "<group>"; };
+		F010DA5925C5FB2E00DC5F74 /* CustomTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableHeaderView.swift; sourceTree = "<group>"; };
+		F010DA5C25C5FE5700DC5F74 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		F010DA5D25C5FE5700DC5F74 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
+		F010DA6125C606F500DC5F74 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		F010DA6425C6083500DC5F74 /* FormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterManager.swift; sourceTree = "<group>"; };
 		F0301ED125C4478300B16166 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		F0301ED225C4478300B16166 /* ContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
 		F0301ED625C44B1100B16166 /* MyFloatingPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFloatingPanelLayout.swift; sourceTree = "<group>"; };
@@ -83,6 +99,58 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F010DA4C25C5F4E600DC5F74 /* Detail VC */ = {
+			isa = PBXGroup;
+			children = (
+				F010DA4D25C5F84E00DC5F74 /* DetailTableViewController.swift */,
+				F010DA4E25C5F84E00DC5F74 /* DetailTableViewController.xib */,
+			);
+			name = "Detail VC";
+			sourceTree = "<group>";
+		};
+		F010DA5125C5F88F00DC5F74 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				F010DA5625C5FAC100DC5F74 /* TableHeaderView */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		F010DA5625C5FAC100DC5F74 /* TableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				F010DA5725C5FAD600DC5F74 /* CustomTableHeaderView.xib */,
+				F010DA5925C5FB2E00DC5F74 /* CustomTableHeaderView.swift */,
+			);
+			name = TableHeaderView;
+			sourceTree = "<group>";
+		};
+		F010DA5B25C5FDF000DC5F74 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F0EFB34425C29A0B005445C7 /* List Cell */,
+				F010DA6025C5FE5C00DC5F74 /* Detail Cell */,
+			);
+			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		F010DA6025C5FE5C00DC5F74 /* Detail Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F010DA5C25C5FE5700DC5F74 /* DetailTableViewCell.swift */,
+				F010DA5D25C5FE5700DC5F74 /* DetailTableViewCell.xib */,
+			);
+			name = "Detail Cell";
+			sourceTree = "<group>";
+		};
+		F010DA6325C6082300DC5F74 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F010DA6425C6083500DC5F74 /* FormatterManager.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		F0301ED025C4476900B16166 /* Content VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +163,7 @@
 		F0301ED525C44AF700B16166 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				F010DA6325C6082300DC5F74 /* Managers */,
 				F0301ED625C44B1100B16166 /* MyFloatingPanelLayout.swift */,
 				F0301ED825C44BAA00B16166 /* Extensions */,
 			);
@@ -184,6 +253,7 @@
 		F0EFB33D25C29968005445C7 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F010DA4C25C5F4E600DC5F74 /* Detail VC */,
 				F0301ED025C4476900B16166 /* Content VC */,
 				F0301EDB25C44DD000B16166 /* List VC  */,
 			);
@@ -193,7 +263,8 @@
 		F0EFB33E25C2997C005445C7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F0EFB34425C29A0B005445C7 /* List Cell */,
+				F010DA5125C5F88F00DC5F74 /* Custom Views */,
+				F010DA5B25C5FDF000DC5F74 /* Custom Cells */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -231,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				F0EFB35D25C2E4F9005445C7 /* ListViewModel.swift */,
+				F010DA6125C606F500DC5F74 /* DetailViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -296,7 +368,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0EFB33425C297DA005445C7 /* LaunchScreen.storyboard in Resources */,
+				F010DA5F25C5FE5700DC5F74 /* DetailTableViewCell.xib in Resources */,
+				F010DA5825C5FAD600DC5F74 /* CustomTableHeaderView.xib in Resources */,
 				F0EFB33125C297DA005445C7 /* Assets.xcassets in Resources */,
+				F010DA5025C5F84E00DC5F74 /* DetailTableViewController.xib in Resources */,
 				F0301EDF25C44DEB00B16166 /* ListViewController.xib in Resources */,
 				F0301ED425C4478300B16166 /* ContentViewController.xib in Resources */,
 				F0EFB32F25C297D8005445C7 /* Main.storyboard in Resources */,
@@ -356,19 +431,24 @@
 				F010DA4725C5568300DC5F74 /* UIView+Extensions.swift in Sources */,
 				F0EFB35E25C2E4F9005445C7 /* ListViewModel.swift in Sources */,
 				F0EFB35925C2B715005445C7 /* NetworkConstants.swift in Sources */,
+				F010DA6225C606F500DC5F74 /* DetailViewModel.swift in Sources */,
+				F010DA5A25C5FB2E00DC5F74 /* CustomTableHeaderView.swift in Sources */,
 				F010DA4925C56C7100DC5F74 /* UIBarButtonItem+Extensions.swift in Sources */,
 				F0EFB34725C29A24005445C7 /* ListTableViewCell.swift in Sources */,
 				F0301ED325C4478300B16166 /* ContentViewController.swift in Sources */,
 				F0EFB35725C2B3D2005445C7 /* VehicleRouter.swift in Sources */,
+				F010DA6525C6083500DC5F74 /* FormatterManager.swift in Sources */,
 				F0301ED725C44B1100B16166 /* MyFloatingPanelLayout.swift in Sources */,
 				F0301EDE25C44DEB00B16166 /* ListViewController.swift in Sources */,
 				F010DA4B25C59F0900DC5F74 /* Date+Extensions.swift in Sources */,
 				F0EFB35225C2B23E005445C7 /* VehiclesListModel.swift in Sources */,
 				F0EFB32825C297D8005445C7 /* AppDelegate.swift in Sources */,
+				F010DA4F25C5F84E00DC5F74 /* DetailTableViewController.swift in Sources */,
 				F0301EDA25C44BC400B16166 /* FloatingPanel+Extensions.swift in Sources */,
 				F0EFB35525C2B30C005445C7 /* ServiceClient.swift in Sources */,
 				F0EFB35025C2B228005445C7 /* VehicleDetailModel.swift in Sources */,
 				F0EFB35B25C2BDDF005445C7 /* VehicleClient.swift in Sources */,
+				F010DA5E25C5FE5700DC5F74 /* DetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

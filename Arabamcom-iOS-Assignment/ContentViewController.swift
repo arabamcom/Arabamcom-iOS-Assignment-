@@ -10,7 +10,7 @@ import UIKit
 
 protocol ContentViewControllerDelegate: class {
     func sortChanged(sortDirection: Int, sortType: Int)
-    
+   // func filteredResults(sort: Int, sortDirection: Int, minDate:String?, maxDate: String?, minYear: Int?, maxYear: Int?, skip: Int?, take: Int)
 }
 
 class ContentViewController: UIViewController {
@@ -34,6 +34,7 @@ class ContentViewController: UIViewController {
     var maxYear = ""
     var isChanged = true
     let dateSelections = ["Tarih Seç","Son 1 Gün", "Son 2 Gün", "Son 3 Gün", "Son 7 Gün", "Son 30 Gün"]
+    var selectedDateFilter: String = ""
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -49,6 +50,7 @@ class ContentViewController: UIViewController {
         sortDirectionButton.addTarget(self, action: #selector(didTappedSortDirection), for: .touchUpInside)
         sortTypeSegmentedControl.addTarget(self, action: #selector(didChangeSegment(sender:)), for: .valueChanged)
         changedButton.addTarget(self, action: #selector(didTappedChangeButton), for: .touchUpInside)
+        filterButton.addTarget(self, action: #selector(didTappedFilterButton), for: .touchUpInside)
         
         minYearTextField.delegate = self
         maxYearTextField.delegate = self
@@ -68,11 +70,8 @@ class ContentViewController: UIViewController {
             delegate?.sortChanged(sortDirection: 0, sortType: selectedSegmentIndex)
             sortDirection.toggle()
         }
-        
-       
     }
    
-    
     @objc private func didChangeSegment(sender: UISegmentedControl){
                 
         if sortDirection == false {
@@ -84,7 +83,6 @@ class ContentViewController: UIViewController {
             selectedSegmentIndex = sender.selectedSegmentIndex
             sortDirection.toggle()
         }
-    
     }
     
     @objc private func didTappedChangeButton(){
@@ -105,7 +103,13 @@ class ContentViewController: UIViewController {
             minYear = minYearTextField.text ?? ""
             isChanged.toggle()
         }
-        
+    }
+    
+    @objc private func didTappedFilterButton(){
+//        guard let maximumYear = maxYearTextField.text else {return}
+//        guard let minimumYear = minYearTextField.text else {return}
+//        
+//        delegate?.filteredResults(sort: 0, sortDirection: 0, minDate: Date.getMinDate(), maxDate: selectedDateFilter, minYear: Int(minimumYear), maxYear: Int(maximumYear), skip: nil, take: 10)
     }
     
 
@@ -157,18 +161,18 @@ extension ContentViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         case 0:
             selectDateTextField.text = ""
         case 1:
-            print("Selected Date Filter: \(Date.getMaxDate(dateSelection: .lastDay))")
+            selectedDateFilter = Date.getMaxDate(dateSelection: .lastDay)
         case 2:
-            print("Selected Date Filter: \(Date.getMaxDate(dateSelection: .lastTwoDays))")
+            selectedDateFilter = Date.getMaxDate(dateSelection: .lastTwoDays)
         case 3:
-            print("Selected Date Filter: \(Date.getMaxDate(dateSelection: .lastThreeDays))")
+            selectedDateFilter = Date.getMaxDate(dateSelection: .lastThreeDays)
         case 4:
-            print("Selected Date Filter: \(Date.getMaxDate(dateSelection: .lastWeek))")
+            selectedDateFilter = Date.getMaxDate(dateSelection: .lastWeek)
         case 5:
-             print("Selected Date Filter: \(Date.getMaxDate(dateSelection: .lastMonth))")
+             selectedDateFilter = Date.getMaxDate(dateSelection: .lastMonth)
         
         default:
-            ""
+            break
         }
         
     }

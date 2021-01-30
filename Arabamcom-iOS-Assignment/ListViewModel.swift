@@ -35,12 +35,8 @@ class ListViewModel {
     }
     
     var price: String {
-       let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.groupingSeparator = "."
         guard let vehiclePrice = vehicles.price else {return ""}
-        guard let price = formatter.string(from: vehiclePrice as NSNumber) else {return ""}
-        return "\(price) TL"
+        return FormatterManager.shared.numberFormatter(price: vehiclePrice)
     }
 }
 
