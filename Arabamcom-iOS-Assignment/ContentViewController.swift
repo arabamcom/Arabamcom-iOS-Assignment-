@@ -19,7 +19,10 @@ class ContentViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var sortTypeSegmentedControl: UISegmentedControl!
     @IBOutlet weak var sortDirectionButton: UIButton!
-     
+    @IBOutlet weak var minYearTextField: UITextField!
+    @IBOutlet weak var maxYearTextField: UITextField!
+    @IBOutlet weak var changedButton: UIButton!
+    
     //MARK: - Properties
     weak var delegate: ContentViewControllerDelegate?
     var sortDirection = true
@@ -28,8 +31,12 @@ class ContentViewController: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        sortDirectionButton.layer.cornerRadius = 10
+        
+        UIView.textFieldLeftSideSpace(textField: minYearTextField)
+        UIView.textFieldLeftSideSpace(textField: maxYearTextField)
+        UIView.setCornerRadius(viewElement: changedButton, cornerRadius: 5)
+        UIView.setCornerRadius(viewElement: sortDirectionButton, cornerRadius: 10)
+        
         sortDirectionButton.addTarget(self, action: #selector(didTappedSortDirection), for: .touchUpInside)
         sortTypeSegmentedControl.addTarget(self, action: #selector(didChangeSegment(sender:)), for: .valueChanged)
     }

@@ -19,9 +19,9 @@ public class MyFloatingPanelLayout: FloatingPanelLayout {
     
     public var anchors: [FloatingPanelState : FloatingPanelLayoutAnchoring] {
         return [
-            .full: FloatingPanelLayoutAnchor(absoluteInset: 130.0, edge: .top, referenceGuide: .safeArea),
-            .half: FloatingPanelLayoutAnchor(absoluteInset: 200, edge: .bottom, referenceGuide: .safeArea),
-            .tip: FloatingPanelLayoutAnchor(absoluteInset: 14, edge: .bottom, referenceGuide: .safeArea)
+            .full: FloatingPanelLayoutAnchor(absoluteInset: 80.0, edge: .top, referenceGuide: .safeArea),
+            .half: FloatingPanelLayoutAnchor(absoluteInset: 185.0, edge: .bottom, referenceGuide: .safeArea),
+            .tip: FloatingPanelLayoutAnchor(absoluteInset: 14.0, edge: .bottom, referenceGuide: .safeArea)
             ]
     }
     public func backdropAlpha(for state: FloatingPanelState) -> CGFloat {
