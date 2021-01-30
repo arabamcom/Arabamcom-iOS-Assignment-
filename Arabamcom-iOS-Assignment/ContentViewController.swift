@@ -27,6 +27,10 @@ class ContentViewController: UIViewController {
     weak var delegate: ContentViewControllerDelegate?
     var sortDirection = true
     var selectedSegmentIndex = 0
+    var minYear = ""
+    var maxYear = ""
+    var isChanged = true
+    
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -39,6 +43,12 @@ class ContentViewController: UIViewController {
         
         sortDirectionButton.addTarget(self, action: #selector(didTappedSortDirection), for: .touchUpInside)
         sortTypeSegmentedControl.addTarget(self, action: #selector(didChangeSegment(sender:)), for: .valueChanged)
+        changedButton.addTarget(self, action: #selector(didTappedChangeButton), for: .touchUpInside)
+        
+        minYearTextField.delegate = self
+        maxYearTextField.delegate = self
+        
+       configureToolBar()
     }
 
     //MARK: - Helper Methods
@@ -68,10 +78,51 @@ class ContentViewController: UIViewController {
             selectedSegmentIndex = sender.selectedSegmentIndex
             sortDirection.toggle()
         }
-        
-       
+    
     }
     
+    @objc private func didTappedChangeButton(){
+        minYear = minYearTextField.text ?? ""
+        maxYear = maxYearTextField.text ?? ""
+        
+        if isChanged == false {
+            maxYearTextField.text = minYear
+            minYearTextField.text = maxYear
+            maxYear = maxYearTextField.text ?? ""
+            minYear = minYearTextField.text ?? ""
+            
+            isChanged.toggle()
+        } else {
+            minYearTextField.text = maxYear
+            maxYearTextField.text = minYear
+            maxYear = maxYearTextField.text ?? ""
+            minYear = minYearTextField.text ?? ""
+            isChanged.toggle()
+        }
+        
+    }
     
+    //MARK: - Configure ToolBar
+    private func configureToolBar(){
+        let bar = UIToolbar()
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(doneBarButtonTapped))
+        
+        bar.items = [flexibleSpace ,doneBarButton]
+        bar.sizeToFit()
+        maxYearTextField.inputAccessoryView = bar
+        minYearTextField.inputAccessoryView = bar
+    }
     
+    @objc private func doneBarButtonTapped(){
+        maxYearTextField.resignFirstResponder()
+        minYearTextField.resignFirstResponder()
+    }
+}
+
+//MARK: - UITextfield Delegate
+extension ContentViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return range.location < 4
+    }
 }
