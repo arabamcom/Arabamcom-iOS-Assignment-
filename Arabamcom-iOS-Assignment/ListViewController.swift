@@ -94,7 +94,7 @@ class ListViewController: UIViewController {
     
 }
 
-//MARK: - UITable View Delegate
+//MARK: - UITable View Delegate & Data Source
 extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         allVehicles.count

@@ -22,6 +22,9 @@ class ContentViewController: UIViewController {
     @IBOutlet weak var minYearTextField: UITextField!
     @IBOutlet weak var maxYearTextField: UITextField!
     @IBOutlet weak var changedButton: UIButton!
+    @IBOutlet weak var selectDateTextField: UITextField!
+    @IBOutlet weak var filterButton: UIButton!
+    
     
     //MARK: - Properties
     weak var delegate: ContentViewControllerDelegate?
@@ -30,7 +33,7 @@ class ContentViewController: UIViewController {
     var minYear = ""
     var maxYear = ""
     var isChanged = true
-    
+    let dateSelections = ["Tarih Seç","Son 1 Gün", "Son 2 Gün", "Son 3 Gün", "Son 7 Gün", "Son 30 Gün"]
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -38,8 +41,10 @@ class ContentViewController: UIViewController {
         
         UIView.textFieldLeftSideSpace(textField: minYearTextField)
         UIView.textFieldLeftSideSpace(textField: maxYearTextField)
+        UIView.textFieldLeftSideSpace(textField: selectDateTextField)
         UIView.setCornerRadius(viewElement: changedButton, cornerRadius: 5)
         UIView.setCornerRadius(viewElement: sortDirectionButton, cornerRadius: 10)
+        UIView.setCornerRadius(viewElement: filterButton, cornerRadius: 10)
         
         sortDirectionButton.addTarget(self, action: #selector(didTappedSortDirection), for: .touchUpInside)
         sortTypeSegmentedControl.addTarget(self, action: #selector(didChangeSegment(sender:)), for: .valueChanged)
@@ -48,7 +53,8 @@ class ContentViewController: UIViewController {
         minYearTextField.delegate = self
         maxYearTextField.delegate = self
         
-       configureToolBar()
+        configureToolBar()
+        createPickerView()
     }
 
     //MARK: - Helper Methods
@@ -102,21 +108,28 @@ class ContentViewController: UIViewController {
         
     }
     
-    //MARK: - Configure ToolBar
+
     private func configureToolBar(){
-        let bar = UIToolbar()
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneBarButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(doneBarButtonTapped))
-        
-        bar.items = [flexibleSpace ,doneBarButton]
-        bar.sizeToFit()
-        maxYearTextField.inputAccessoryView = bar
-        minYearTextField.inputAccessoryView = bar
+
+        maxYearTextField.inputAccessoryView = UIBarButtonItem.setDoneBarButtonItem(target: self, action: #selector(doneBarButtonTapped))
+        minYearTextField.inputAccessoryView = UIBarButtonItem.setDoneBarButtonItem(target: self, action: #selector(doneBarButtonTapped))
     }
     
     @objc private func doneBarButtonTapped(){
         maxYearTextField.resignFirstResponder()
         minYearTextField.resignFirstResponder()
+        selectDateTextField.resignFirstResponder()
+    }
+    
+    //MARK: - Create PickerView
+    private func createPickerView(){
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        selectDateTextField.inputView = pickerView
+        
+        selectDateTextField.inputAccessoryView = UIBarButtonItem.setDoneBarButtonItem(target: self, action: #selector(doneBarButtonTapped))
+        pickerView.backgroundColor = UIColor.init(displayP3Red: 255, green: 255, blue: 255, alpha: 1)
+        
     }
 }
 
@@ -124,5 +137,39 @@ class ContentViewController: UIViewController {
 extension ContentViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return range.location < 4
+    }
+}
+
+//MARK: - UIPickerView Delegate & DataSource
+
+extension ContentViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return dateSelections.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectDateTextField.text = dateSelections[row]
+        if row == 0 {
+            selectDateTextField.text = ""
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        var label: UILabel
+        
+        if let view = view as? UILabel {
+            label = view
+        } else {
+            label = UILabel()
+        }
+        
+        label.textColor = .black
+        label.textAlignment = .center
+        label.text = dateSelections[row]
+        return label
     }
 }
