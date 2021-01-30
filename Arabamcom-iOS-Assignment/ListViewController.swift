@@ -137,11 +137,6 @@ extension ListViewController {
 //MARK: - FloatingPanelController Delegate
 
 extension ListViewController: FloatingPanelControllerDelegate {
-    func floatingPanelWillBeginDragging(_ fpc: FloatingPanelController) {
-        if fpc.state == .full {
-            //TODO: Filter's textField become first responder
-        }
-    }
     
     func floatingPanelWillEndDragging(_ fpc: FloatingPanelController, withVelocity velocity: CGPoint, targetState: UnsafeMutablePointer<FloatingPanelState>) {
         if targetState.pointee != .tip {
@@ -154,6 +149,7 @@ extension ListViewController: FloatingPanelControllerDelegate {
     }
 }
 
+//MARK: - ContentVC Delegate
 extension ListViewController: ContentViewControllerDelegate {
     func sortChanged(sortDirection: Int, sortType: Int) {
         allVehicles.removeAll()

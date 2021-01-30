@@ -153,9 +153,24 @@ extension ContentViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectDateTextField.text = dateSelections[row]
-        if row == 0 {
+        switch row {
+        case 0:
             selectDateTextField.text = ""
+        case 1:
+            print("Selected Date Filter: \(Date.getMaxDate(dateSelection: .lastDay))")
+        case 2:
+            print("Selected Date Filter: \(Date.getMaxDate(dateSelection: .lastTwoDays))")
+        case 3:
+            print("Selected Date Filter: \(Date.getMaxDate(dateSelection: .lastThreeDays))")
+        case 4:
+            print("Selected Date Filter: \(Date.getMaxDate(dateSelection: .lastWeek))")
+        case 5:
+             print("Selected Date Filter: \(Date.getMaxDate(dateSelection: .lastMonth))")
+        
+        default:
+            ""
         }
+        
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {

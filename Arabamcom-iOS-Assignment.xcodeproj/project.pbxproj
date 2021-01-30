@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F010DA4725C5568300DC5F74 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA4625C5568300DC5F74 /* UIView+Extensions.swift */; };
 		F010DA4925C56C7100DC5F74 /* UIBarButtonItem+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA4825C56C7100DC5F74 /* UIBarButtonItem+Extensions.swift */; };
+		F010DA4B25C59F0900DC5F74 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA4A25C59F0900DC5F74 /* Date+Extensions.swift */; };
 		F0301ED325C4478300B16166 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0301ED125C4478300B16166 /* ContentViewController.swift */; };
 		F0301ED425C4478300B16166 /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0301ED225C4478300B16166 /* ContentViewController.xib */; };
 		F0301ED725C44B1100B16166 /* MyFloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0301ED625C44B1100B16166 /* MyFloatingPanelLayout.swift */; };
@@ -37,6 +38,7 @@
 		AE283BB4908EEB8CCD25819B /* Pods_Arabamcom_iOS_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Arabamcom_iOS_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F010DA4625C5568300DC5F74 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F010DA4825C56C7100DC5F74 /* UIBarButtonItem+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extensions.swift"; sourceTree = "<group>"; };
+		F010DA4A25C59F0900DC5F74 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		F0301ED125C4478300B16166 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		F0301ED225C4478300B16166 /* ContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
 		F0301ED625C44B1100B16166 /* MyFloatingPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFloatingPanelLayout.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				F0301ED925C44BC400B16166 /* FloatingPanel+Extensions.swift */,
 				F010DA4625C5568300DC5F74 /* UIView+Extensions.swift */,
 				F010DA4825C56C7100DC5F74 /* UIBarButtonItem+Extensions.swift */,
+				F010DA4A25C59F0900DC5F74 /* Date+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -359,6 +362,7 @@
 				F0EFB35725C2B3D2005445C7 /* VehicleRouter.swift in Sources */,
 				F0301ED725C44B1100B16166 /* MyFloatingPanelLayout.swift in Sources */,
 				F0301EDE25C44DEB00B16166 /* ListViewController.swift in Sources */,
+				F010DA4B25C59F0900DC5F74 /* Date+Extensions.swift in Sources */,
 				F0EFB35225C2B23E005445C7 /* VehiclesListModel.swift in Sources */,
 				F0EFB32825C297D8005445C7 /* AppDelegate.swift in Sources */,
 				F0301EDA25C44BC400B16166 /* FloatingPanel+Extensions.swift in Sources */,
