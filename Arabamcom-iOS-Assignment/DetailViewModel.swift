@@ -24,7 +24,7 @@ class DetailViewModel {
         guard let cityName = detailData.location?.cityName else {return}
         guard let townName = detailData.location?.townName else {return}
         guard let id = detailData.id else {return}
-        //guard let text = detailData.text else {return}
+        guard let text = detailData.text else {return}
         
         switch indexPath.section {
         case 0:
@@ -40,7 +40,7 @@ class DetailViewModel {
         case 4:
             label.text = detailData.dateFormatted
         case 6:
-            label.text = detailData.text
+            label.text = text.html2String
             ///case 5 is for properties
         case 7:
             label.text = detailData.userInfo?.nameSurname

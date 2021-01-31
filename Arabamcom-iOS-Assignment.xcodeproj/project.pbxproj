@@ -18,6 +18,8 @@
 		F010DA5F25C5FE5700DC5F74 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F010DA5D25C5FE5700DC5F74 /* DetailTableViewCell.xib */; };
 		F010DA6225C606F500DC5F74 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA6125C606F500DC5F74 /* DetailViewModel.swift */; };
 		F010DA6525C6083500DC5F74 /* FormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA6425C6083500DC5F74 /* FormatterManager.swift */; };
+		F010DA6725C6EF2400DC5F74 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA6625C6EF2400DC5F74 /* Data+Extensions.swift */; };
+		F010DA6925C6F11800DC5F74 /* StringProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA6825C6F11700DC5F74 /* StringProtocol+Extensions.swift */; };
 		F0301ED325C4478300B16166 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0301ED125C4478300B16166 /* ContentViewController.swift */; };
 		F0301ED425C4478300B16166 /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0301ED225C4478300B16166 /* ContentViewController.xib */; };
 		F0301ED725C44B1100B16166 /* MyFloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0301ED625C44B1100B16166 /* MyFloatingPanelLayout.swift */; };
@@ -55,6 +57,8 @@
 		F010DA5D25C5FE5700DC5F74 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		F010DA6125C606F500DC5F74 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		F010DA6425C6083500DC5F74 /* FormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatterManager.swift; sourceTree = "<group>"; };
+		F010DA6625C6EF2400DC5F74 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		F010DA6825C6F11700DC5F74 /* StringProtocol+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StringProtocol+Extensions.swift"; sourceTree = "<group>"; };
 		F0301ED125C4478300B16166 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		F0301ED225C4478300B16166 /* ContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
 		F0301ED625C44B1100B16166 /* MyFloatingPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFloatingPanelLayout.swift; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 				F010DA4625C5568300DC5F74 /* UIView+Extensions.swift */,
 				F010DA4825C56C7100DC5F74 /* UIBarButtonItem+Extensions.swift */,
 				F010DA4A25C59F0900DC5F74 /* Date+Extensions.swift */,
+				F010DA6625C6EF2400DC5F74 /* Data+Extensions.swift */,
+				F010DA6825C6F11700DC5F74 /* StringProtocol+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 				F010DA4925C56C7100DC5F74 /* UIBarButtonItem+Extensions.swift in Sources */,
 				F0EFB34725C29A24005445C7 /* ListTableViewCell.swift in Sources */,
 				F0301ED325C4478300B16166 /* ContentViewController.swift in Sources */,
+				F010DA6925C6F11800DC5F74 /* StringProtocol+Extensions.swift in Sources */,
 				F0EFB35725C2B3D2005445C7 /* VehicleRouter.swift in Sources */,
 				F010DA6525C6083500DC5F74 /* FormatterManager.swift in Sources */,
 				F0301ED725C44B1100B16166 /* MyFloatingPanelLayout.swift in Sources */,
@@ -447,6 +454,7 @@
 				F0301EDA25C44BC400B16166 /* FloatingPanel+Extensions.swift in Sources */,
 				F0EFB35525C2B30C005445C7 /* ServiceClient.swift in Sources */,
 				F0EFB35025C2B228005445C7 /* VehicleDetailModel.swift in Sources */,
+				F010DA6725C6EF2400DC5F74 /* Data+Extensions.swift in Sources */,
 				F0EFB35B25C2BDDF005445C7 /* VehicleClient.swift in Sources */,
 				F010DA5E25C5FE5700DC5F74 /* DetailTableViewCell.swift in Sources */,
 			);

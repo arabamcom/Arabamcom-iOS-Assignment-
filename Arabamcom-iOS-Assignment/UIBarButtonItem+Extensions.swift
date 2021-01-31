@@ -14,6 +14,7 @@ extension UIBarButtonItem {
         let bar = UIToolbar()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneBarButton = UIBarButtonItem(title: "Tamam", style: .plain, target: target, action: action)
+        doneBarButton.tintColor = .systemRed
         bar.sizeToFit()
         
         bar.items = [flexibleSpace, doneBarButton]
