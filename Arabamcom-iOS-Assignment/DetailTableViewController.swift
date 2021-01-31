@@ -38,7 +38,7 @@ class DetailTableViewController: UITableViewController {
         navigationItem.titleView = label
         tableView.register(DetailTableViewCell.nib(), forCellReuseIdentifier: DetailTableViewCell.identifier)
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 50
+        tableView.estimatedRowHeight = 60
     }
     
     override func viewDidLayoutSubviews() {
@@ -72,7 +72,8 @@ class DetailTableViewController: UITableViewController {
             detailViewModel.configure(with: tableHeaderView)
         }
     }
-
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -124,4 +125,28 @@ class DetailTableViewController: UITableViewController {
         return sectionTitles[section]
     }
     
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+       
+        if indexPath.section == 8 {
+            let callAction = UIContextualAction(style: .normal, title: nil) { (_, _, completion) in
+                guard let phone = self.vehicle?.userInfo?.phone else {return}
+                if let url = NSURL(string: "tel://\(phone)"), UIApplication.shared.canOpenURL(url as URL) {
+                    UIApplication.shared.open(url as URL)
+                }
+                    completion(true)
+                }
+                
+                if #available(iOS 13.0, *) {
+                    callAction.image = UIImage(systemName: "phone.fill")
+                } else {
+                    callAction.image = UIImage(named: "phone.fill")
+                }
+                callAction.backgroundColor = .systemGreen
+                let config = UISwipeActionsConfiguration(actions: [callAction])
+                config.performsFirstActionWithFullSwipe = true
+                return config
+            }
+        return UISwipeActionsConfiguration()
+        }
 }
+
