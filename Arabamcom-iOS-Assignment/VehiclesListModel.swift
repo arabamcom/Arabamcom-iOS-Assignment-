@@ -34,13 +34,8 @@ struct Location: Codable {
 
 // MARK: - Property
 struct Property: Codable {
-    var name: Name?
+    var name: String?
     var value: String?
 }
 
-enum Name: String, Codable {
-    case color = "color"
-    case km = "km"
-    case year = "year"
-}
 

@@ -21,15 +21,21 @@ class DetailViewModel {
         guard let label = standartCell.textLabel else {return}
         label.numberOfLines = 0
         
+        guard let cityName = detailData.location?.cityName else {return}
+        guard let townName = detailData.location?.townName else {return}
+        guard let id = detailData.id else {return}
+        
         switch indexPath.section {
         case 0:
             label.text = detailData.modelName
         case 1:
             label.text = FormatterManager.shared.numberFormatter(price: detailData.price)
+            label.textColor = .systemRed
+            label.font = UIFont(name: "HelveticaNeue-Medium", size: 17)
         case 2:
-            label.text = "\(String(describing: detailData.location?.cityName)), \(String(describing: detailData.location?.townName))"
+            label.text = "\(cityName), \(townName)"
         case 3:
-            label.text = "\(String(describing: detailData.id))"
+            label.text = "\(id)"
         case 4:
             label.text = detailData.dateFormatted
         case 6:

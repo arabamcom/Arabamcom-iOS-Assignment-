@@ -52,9 +52,14 @@ class DetailTableViewController: UITableViewController {
         VehicleClient.getVehicleDetail(id: id) { [weak self] (data, error) in
             print("Error with gettin vehicle detail: \(String(describing: error?.localizedDescription))")
             guard let self = self else {return}
-            guard let vehileDetail = data else {return}
-            debugPrint(vehileDetail)
-            //FIXME:Response could not be decoded because of error:\nThe data couldn’t be read because it isn’t in the correct format.
+            guard let vehicleDetail = data else {return}
+            
+            DispatchQueue.main.async {
+                self.vehicle = vehicleDetail
+                self.label.text = vehicleDetail.title
+                self.configureTableHeaderView(vehicle: vehicleDetail)
+            }
+            
         }
     }
     
@@ -99,6 +104,7 @@ class DetailTableViewController: UITableViewController {
                 let detailViewModel = DetailViewModel(detailData: vehicle)
                 detailViewModel.configure(with: cell, indexPath: indexPath)
             }
+            cell.selectionStyle = .none
             return cell
         case 5:
             let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as! DetailTableViewCell
@@ -106,6 +112,7 @@ class DetailTableViewController: UITableViewController {
                 let detailViewModel = DetailViewModel(detailData: vehicle)
                 detailViewModel.configure(with: cell, indexPath: indexPath)
             }
+            cell.selectionStyle = .none
             return cell
         default:
             break
