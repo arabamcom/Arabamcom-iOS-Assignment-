@@ -53,16 +53,6 @@ class DetailViewModel {
 }
 
 extension DetailViewModel {
-    func configure(with view: CustomTableHeaderView) {
-        guard let imageURL = detailData.photos?.first else {return}
-        let imageURLWithResolution = imageURL.replacingOccurrences(of: "{0}", with: "800x600")
-        guard let url = URL(string: imageURLWithResolution) else {return}
-        let resource = ImageResource(downloadURL: url)
-        view.vehicleImageView.kf.setImage(with: resource)
-    }
-}
-
-extension DetailViewModel {
     func configure(with detailCell: DetailTableViewCell, indexPath: IndexPath) {
         let nameLabel = detailCell.propertiesLabel
         let valueLabel = detailCell.valueLabel

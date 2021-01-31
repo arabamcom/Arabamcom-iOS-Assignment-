@@ -57,21 +57,23 @@ class DetailTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.vehicle = vehicleDetail
                 self.label.text = vehicleDetail.title
-                self.configureTableHeaderView(vehicle: vehicleDetail)
+                self.configureTableHeaderCollectionView(vehicle: vehicleDetail)
             }
             
         }
     }
     
     //MARK: - Helper Methods
-    private func configureTableHeaderView(vehicle: VehicleDetailModel) {
-        if let tableHeaderView = CustomTableHeaderView.loadNib(owner: self) as? CustomTableHeaderView {
+
+    
+    private func configureTableHeaderCollectionView(vehicle: VehicleDetailModel) {
+        if let tableHeaderView = ImageTableHeaderCollectionView.loadNib(owner: self) as? ImageTableHeaderCollectionView {
             tableView.tableHeaderView = tableHeaderView
-            tableHeaderView.configureTableHeaderView()
-            let detailViewModel = DetailViewModel(detailData: vehicle)
-            detailViewModel.configure(with: tableHeaderView)
+            tableHeaderView.collectionView.delegate = self
+            tableHeaderView.collectionView.dataSource = self
+            tableHeaderView.collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
+         }
         }
-    }
     
     
     // MARK: - Table view data source
@@ -150,3 +152,25 @@ class DetailTableViewController: UITableViewController {
         }
 }
 
+extension DetailTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return vehicle?.photos?.count ?? 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as! CollectionViewCell
+        guard let vehicle = vehicle else {return UICollectionViewCell()}
+        let collectionViewModel = CollectionViewModel(vehicle: vehicle)
+        collectionViewModel.configureCollectionCell(cell: cell, indexPath: indexPath)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 364, height: 283)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //TODO: full screen
+    }
+    
+}
