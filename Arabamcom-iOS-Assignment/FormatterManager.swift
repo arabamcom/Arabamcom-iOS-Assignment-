@@ -29,4 +29,13 @@ class FormatterManager {
         guard let formattedPrice = formatter.string(from: price! as NSNumber) else {return ""}
         return "\(formattedPrice) TL"
     }
+    
+    //MARK: - Km Formatter
+    func kmFormatter(km: String?) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = "."
+        guard let formattedKm = formatter.string(for: Int(km ?? "")) else {return ""}
+        return "\(formattedKm) km"
+    }
 }

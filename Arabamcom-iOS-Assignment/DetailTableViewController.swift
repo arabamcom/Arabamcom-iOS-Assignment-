@@ -16,8 +16,8 @@ class DetailTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-    
-    let sectionTitles = ["Model Adı", "Fiyat", "Adres", "İlan No", "İlan Tarihi", "Özellikler", "Açıklama", "İsim", "Telefon"]
+    /// all 'i's are capital because section titles are capital and i's seems like 'ı'
+    let sectionTitles = ["Model Adı", "Fİyat", "Adres", "İlan No", "İlan Tarİhİ", "Özellİkler", "Açıklama", "İsİm", "Telefon"]
     
     let label: UILabel = {
         let navLabel = UILabel()

@@ -24,6 +24,7 @@ class DetailViewModel {
         guard let cityName = detailData.location?.cityName else {return}
         guard let townName = detailData.location?.townName else {return}
         guard let id = detailData.id else {return}
+        //guard let text = detailData.text else {return}
         
         switch indexPath.section {
         case 0:
@@ -68,10 +69,32 @@ extension DetailViewModel {
         
         guard let properties = detailData.properties else {return}
         
+        
         for propertie in properties.indices {
             if indexPath.row == propertie {
-                nameLabel?.text = "\(String(describing: properties[indexPath.row].name))"
-                valueLabel?.text = "\(String(describing: properties[indexPath.row].value))"
+                let propertyName = properties[indexPath.row].name
+                let propertyValue = properties[indexPath.row].value
+                
+                if propertyName == "km" {
+                    nameLabel?.text = propertyName?.replacingOccurrences(of: "km", with: "Kilometre")
+                } else if propertyName == "color" {
+                    nameLabel?.text = propertyName?.replacingOccurrences(of: "color", with: "Rengi")
+                } else if propertyName == "year" {
+                    nameLabel?.text = propertyName?.replacingOccurrences(of: "year", with: "Model Yılı")
+                } else if propertyName == "gear" {
+                    nameLabel?.text = propertyName?.replacingOccurrences(of: "gear", with: "Vites")
+                } else if propertyName == "fuel" {
+                    nameLabel?.text = propertyName?.replacingOccurrences(of: "fuel", with: "Yakıt")
+                }
+                
+                
+                
+                if indexPath.row == 0 {
+                    valueLabel?.text = "\(FormatterManager.shared.kmFormatter(km: properties[0].value))"
+                } else {
+                    valueLabel?.text = "\(propertyValue ?? "")"
+                }
+                
             }
         }
     }
