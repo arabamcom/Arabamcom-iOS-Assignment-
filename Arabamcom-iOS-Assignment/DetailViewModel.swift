@@ -75,18 +75,20 @@ extension DetailViewModel {
                 let propertyName = properties[indexPath.row].name
                 let propertyValue = properties[indexPath.row].value
                 
-                if propertyName == "km" {
+                switch propertyName {
+                case "km":
                     nameLabel?.text = propertyName?.replacingOccurrences(of: "km", with: "Kilometre")
-                } else if propertyName == "color" {
-                    nameLabel?.text = propertyName?.replacingOccurrences(of: "color", with: "Rengi")
-                } else if propertyName == "year" {
+                case "color":
+                     nameLabel?.text = propertyName?.replacingOccurrences(of: "color", with: "Rengi")
+                case "year":
                     nameLabel?.text = propertyName?.replacingOccurrences(of: "year", with: "Model Yılı")
-                } else if propertyName == "gear" {
+                case "gear":
                     nameLabel?.text = propertyName?.replacingOccurrences(of: "gear", with: "Vites")
-                } else if propertyName == "fuel" {
+                case "fuel":
                     nameLabel?.text = propertyName?.replacingOccurrences(of: "fuel", with: "Yakıt")
+                default:
+                    break
                 }
-                
                 
                 
                 if indexPath.row == 0 {
