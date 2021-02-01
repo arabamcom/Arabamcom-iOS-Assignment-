@@ -59,7 +59,7 @@
                                         <constraint firstAttribute="height" constant="47" id="wt9-0a-9AG"/>
                                     </constraints>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" image="chevron.up.chevron.down" catalog="system"/>
+                                    <state key="normal" image="arrow.up.arrow.down" catalog="system"/>
                                 </button>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Min Year" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iQH-gg-RHT">
                                     <rect key="frame" x="8" y="267" width="150" height="34"/>
@@ -87,7 +87,7 @@
                                         <constraint firstAttribute="width" constant="42" id="kFj-a1-lP2"/>
                                     </constraints>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" image="repeat" catalog="system"/>
+                                    <state key="normal" image="arrow.right.arrow.left.square" catalog="system"/>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filtrele" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfK-Zc-uC6">
                                     <rect key="frame" x="8" y="223" width="69" height="24"/>
@@ -171,7 +171,7 @@
         </view>
     </objects>
     <resources>
-        <image name="chevron.up.chevron.down" catalog="system" width="128" height="128"/>
-        <image name="repeat" catalog="system" width="128" height="99"/>
+        <image name="arrow.right.arrow.left.square" catalog="system" width="128" height="114"/>
+        <image name="arrow.up.arrow.down" catalog="system" width="128" height="96"/>
     </resources>
 </document>

@@ -13,10 +13,6 @@ class ImageTableHeaderCollectionView: UIView {
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     
-    override class func awakeFromNib() {
-        super.awakeFromNib()
-        //collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
-    }
     
     //MARK: - Helper Methods
     

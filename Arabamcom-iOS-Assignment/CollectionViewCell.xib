@@ -20,16 +20,29 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SDb-FX-rLe">
                         <rect key="frame" x="0.0" y="0.0" width="364" height="283"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9e-kb-8fh">
+                        <rect key="frame" x="294" y="243" width="50" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="Duc-xk-DSO"/>
+                            <constraint firstAttribute="height" constant="20" id="per-6c-ncd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="d9e-kb-8fh" secondAttribute="bottom" constant="20" id="8Yi-hJ-jif"/>
                 <constraint firstAttribute="trailing" secondItem="SDb-FX-rLe" secondAttribute="trailing" id="KhQ-8h-Yie"/>
                 <constraint firstItem="SDb-FX-rLe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gdn-Ul-uf2"/>
                 <constraint firstAttribute="bottom" secondItem="SDb-FX-rLe" secondAttribute="bottom" id="iSt-a9-obx"/>
+                <constraint firstAttribute="trailing" secondItem="d9e-kb-8fh" secondAttribute="trailing" constant="20" id="qtn-bP-Z7w"/>
                 <constraint firstItem="SDb-FX-rLe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="r8c-gI-iZQ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="imageCountLabel" destination="d9e-kb-8fh" id="tNa-L2-hZl"/>
                 <outlet property="imageView" destination="SDb-FX-rLe" id="C9I-y3-Bxl"/>
             </connections>
             <point key="canvasLocation" x="132" y="124"/>

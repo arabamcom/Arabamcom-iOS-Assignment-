@@ -27,6 +27,11 @@ class CollectionViewModel {
         }
         return imagesWithResolution
     }
+    
+    var imageCount: Int {
+        guard let count = vehicle.photos?.count else {return 0}
+        return count
+    }
 
     
     func configureCollectionCell(cell: CollectionViewCell, indexPath: IndexPath) {
@@ -34,6 +39,8 @@ class CollectionViewModel {
         guard let url = URL(string: vehicleImagesResourceURL[indexPath.row]) else {return}
         let resource = ImageResource(downloadURL: url)
         cell.imageView.kf.setImage(with: resource)
+        
+        cell.imageCountLabel.text = "\(indexPath.row + 1) / \(imageCount)"
         
     }
     

@@ -171,6 +171,13 @@
 			name = "Collection View Cell";
 			sourceTree = "<group>";
 		};
+		F010DA7625C800B800DC5F74 /* Full Screen VC */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Full Screen VC";
+			sourceTree = "<group>";
+		};
 		F0301ED025C4476900B16166 /* Content VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +282,7 @@
 		F0EFB33D25C29968005445C7 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F010DA7625C800B800DC5F74 /* Full Screen VC */,
 				F010DA4C25C5F4E600DC5F74 /* Detail VC */,
 				F0301ED025C4476900B16166 /* Content VC */,
 				F0301EDB25C44DD000B16166 /* List VC  */,

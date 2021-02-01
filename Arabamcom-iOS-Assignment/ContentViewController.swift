@@ -61,7 +61,6 @@ class ContentViewController: UIViewController {
 
     //MARK: - Helper Methods
     @objc private func didTappedSortDirection(){
-        sortDirectionButton.isHighlighted = true
 
         if sortDirection == true {
             delegate?.sortChanged(sortDirection: 1, sortType: selectedSegmentIndex)

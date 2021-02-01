@@ -12,6 +12,7 @@ class CollectionViewCell: UICollectionViewCell {
 
     //MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageCountLabel: UILabel!
     
     //MARK: - Properties
     static let identifier = "CollectionViewCell"
