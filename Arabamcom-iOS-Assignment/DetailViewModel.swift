@@ -80,7 +80,6 @@ extension DetailViewModel {
                     break
                 }
                 
-                
                 if indexPath.row == 0 {
                     valueLabel?.text = "\(FormatterManager.shared.kmFormatter(km: properties[0].value))"
                 } else {

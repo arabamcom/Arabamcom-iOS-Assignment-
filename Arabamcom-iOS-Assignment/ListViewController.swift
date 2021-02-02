@@ -82,7 +82,7 @@ class ListViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
-        navigationItem.title = "Liste"
+        navigationItem.title = "İlanlar"
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
@@ -97,7 +97,7 @@ class ListViewController: UIViewController {
     
     func fireAlertMessage(message: String) {
         let alertController = UIAlertController(title: "Dikkat", message: message, preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "OK", style: .cancel) { (_) in
+        let okButton = UIAlertAction(title: "Tamam", style: .cancel) { (_) in
             self.fpc.move(to: .full, animated: true)
         }
         alertController.addAction(okButton)
@@ -154,6 +154,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: - Pagination
 extension ListViewController {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        ///activate pagination last 100 cgfloat of screen
         let position = scrollView.contentOffset.y
         if position > (tableView.contentSize.height - 100 - scrollView.frame.size.height){
             

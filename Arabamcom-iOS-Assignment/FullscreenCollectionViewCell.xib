@@ -11,14 +11,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FullscreenCollectionViewCell" id="gTV-IL-0wX" customClass="FullscreenCollectionViewCell" customModule="Arabamcom_iOS_Assignment" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="404" height="404"/>
+            <rect key="frame" x="0.0" y="0.0" width="374" height="404"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="404" height="404"/>
+                <rect key="frame" x="0.0" y="0.0" width="374" height="404"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4c4-bq-Csb">
-                        <rect key="frame" x="344" y="364" width="40" height="20"/>
+                        <rect key="frame" x="324" y="374" width="40" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="lis-3P-7Ur"/>
                             <constraint firstAttribute="height" constant="20" id="v8P-pE-qC9"/>
@@ -28,15 +28,15 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Ep-TL-Wep">
-                        <rect key="frame" x="0.0" y="0.0" width="404" height="404"/>
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="404"/>
                     </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="7Ep-TL-Wep" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="BZZ-BQ-8E0"/>
-                <constraint firstAttribute="trailing" secondItem="4c4-bq-Csb" secondAttribute="trailing" constant="20" id="Lss-F0-0mH"/>
+                <constraint firstAttribute="trailing" secondItem="4c4-bq-Csb" secondAttribute="trailing" constant="10" id="Lss-F0-0mH"/>
                 <constraint firstItem="7Ep-TL-Wep" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MOH-eM-2f5"/>
-                <constraint firstAttribute="bottom" secondItem="4c4-bq-Csb" secondAttribute="bottom" constant="20" id="UiB-dj-zmL"/>
+                <constraint firstAttribute="bottom" secondItem="4c4-bq-Csb" secondAttribute="bottom" constant="10" id="UiB-dj-zmL"/>
                 <constraint firstAttribute="bottom" secondItem="7Ep-TL-Wep" secondAttribute="bottom" id="jSb-sI-BEf"/>
                 <constraint firstAttribute="trailing" secondItem="7Ep-TL-Wep" secondAttribute="trailing" id="kkk-Md-ORj"/>
             </constraints>

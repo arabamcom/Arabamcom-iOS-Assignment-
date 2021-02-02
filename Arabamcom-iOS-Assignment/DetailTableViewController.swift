@@ -16,7 +16,7 @@ class DetailTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-    /// all 'i's are capital because section titles are capital and i's seems like 'ı'
+    /// all 'i's are capital because section titles are capital and İ's seems like 'I'
     let sectionTitles = ["Model Adı", "Fİyat", "Adres", "İlan No", "İlan Tarİhİ", "Özellİkler", "Açıklama", "İsİm", "Telefon"]
     
     let label: UILabel = {
@@ -64,8 +64,6 @@ class DetailTableViewController: UITableViewController {
     }
     
     //MARK: - Helper Methods
-
-    
     private func configureTableHeaderCollectionView(vehicle: VehicleDetailModel) {
         if let tableHeaderView = ImageTableHeaderCollectionView.loadNib(owner: self) as? ImageTableHeaderCollectionView {
             tableView.tableHeaderView = tableHeaderView
@@ -138,6 +136,7 @@ class DetailTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
        
         if indexPath.section == 8 {
+            ///Swipe to call
             let callAction = UIContextualAction(style: .normal, title: nil) { (_, _, completion) in
                 guard let phone = self.vehicle?.userInfo?.phone else {return}
                 if let url = NSURL(string: "tel://\(phone)"), UIApplication.shared.canOpenURL(url as URL) {

@@ -73,27 +73,15 @@ class ContentViewController: UIViewController {
     //MARK: - Actions
     @objc private func didTappedSortDirection(){
         
-        if sortDirection == true {
-            delegate?.sortChanged(sortType: selectedSegmentIndex, sortDirection: 1)
-            sortDirection.toggle()
-        } else {
-            delegate?.sortChanged(sortType: selectedSegmentIndex, sortDirection: 0)
-            sortDirection.toggle()
-        }
-
+        sortDirection ? delegate?.sortChanged(sortType: selectedSegmentIndex, sortDirection: 1) : delegate?.sortChanged(sortType: selectedSegmentIndex, sortDirection: 0)
+        
+        sortDirection.toggle()
     }
    
     @objc private func didChangeSegment(sender: UISegmentedControl){
- 
-        if sortDirection == false {
-            delegate?.sortChanged(sortType: sender.selectedSegmentIndex, sortDirection: 0)
-            selectedSegmentIndex = sender.selectedSegmentIndex
-            sortDirection.toggle()
-        } else if sortDirection == true {
-            delegate?.sortChanged(sortType: sender.selectedSegmentIndex, sortDirection: 1)
-            selectedSegmentIndex = sender.selectedSegmentIndex
-            sortDirection.toggle()
-        }
+
+        sortDirection ? delegate?.sortChanged(sortType: sender.selectedSegmentIndex, sortDirection: 0) : delegate?.sortChanged(sortType: sender.selectedSegmentIndex, sortDirection: 1)
+        self.selectedSegmentIndex = sender.selectedSegmentIndex
 
     }
     
@@ -133,11 +121,8 @@ class ContentViewController: UIViewController {
             sortDirection.toggle()
         }
         
-       
-        
     }
     
-
     private func configureToolBar(){
 
         maxYearTextField.inputAccessoryView = UIBarButtonItem.setDoneBarButtonItem(target: self, action: #selector(doneBarButtonTapped))
@@ -145,6 +130,10 @@ class ContentViewController: UIViewController {
     }
     
     @objc private func doneBarButtonTapped(){
+        if maxYearTextField.text == "" && minYearTextField.text == ""{
+            self.maxYear = nil
+            self.minYear = nil
+        }
         maxYearTextField.resignFirstResponder()
         minYearTextField.resignFirstResponder()
         selectDateTextField.resignFirstResponder()
@@ -206,8 +195,6 @@ extension ContentViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         default:
             break
         }
-        
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -224,4 +211,9 @@ extension ContentViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         label.text = dateSelections[row]
         return label
     }
+    
+    
+    
+    
+    
 }
