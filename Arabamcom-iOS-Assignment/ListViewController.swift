@@ -21,7 +21,11 @@ class ListViewController: UIViewController {
     }
     var isPagination = false
     let fpc = FloatingPanelController()
-    lazy var contentVC = ContentViewController()
+    var sortType = 0
+    var sortDirection = 0
+    var minYear: Int?
+    var maxYear: Int?
+    var minDate: String?
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -30,14 +34,17 @@ class ListViewController: UIViewController {
         configureNavigationBar()
         getLists(pagination: true)
         configureContentVC()
-        contentVC.delegate = self
     }
     
     //MARK: - Network
-    private func getLists(pagination: Bool = false, sortDirection: Int = 0, sortType: Int? = 0){
-        if pagination {
-            isPagination = true
-            VehicleClient.getListVehicle(sort: sortType ?? 0, sortDirection: sortDirection, skip: pagination ? allVehicles.count : nil, take: 10) { [weak self] (data, error) in
+    private func getLists(pagination: Bool = false){
+        
+        VehicleClient.getListVehicle(sort: sortType,
+                                     sortDirection: sortDirection,
+                                     skip: pagination ? allVehicles.count : nil,
+                                     take: 10,
+                                     minDate: minDate != nil ? minDate : nil,
+                                    minYear: self.minYear, maxYear: self.maxYear) { [weak self] (data, error) in
                 print("Getting list error: \(String(describing: error?.localizedDescription))")
                 guard let self = self else {return}
                 
@@ -51,11 +58,19 @@ class ListViewController: UIViewController {
                     print("New Data error \(String(describing: error?.localizedDescription))")
                     return
                 }
+                                        
+                if !self.isPagination {
+                   self.allVehicles = newData
+                }
                 
                 guard !self.isPagination || !self.allVehicles.contains(where: {$0.id == newData.first?.id}) else {return}
                 self.allVehicles.append(contentsOf: newData)
+                                        
+                if newData.isEmpty {
+                    self.fireAlertMessage(message: "Belirlenen kriterlere uygun ilan bulunamadı.")
+                }
             }
-        }
+        
     }
 
     //MARK: - Helper Methods
@@ -80,8 +95,19 @@ class ListViewController: UIViewController {
         return footerView
     }
     
+    func fireAlertMessage(message: String) {
+        let alertController = UIAlertController(title: "Dikkat", message: message, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK", style: .cancel) { (_) in
+            self.fpc.move(to: .full, animated: true)
+        }
+        alertController.addAction(okButton)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     //MARK: - Floating Panel
     private func configureContentVC(){
+        let contentVC = ContentViewController()
+        contentVC.delegate = self
         fpc.set(contentViewController: contentVC)
         fpc.contentMode = .fitToBounds
         fpc.layout = MyFloatingPanelLayout()
@@ -159,14 +185,25 @@ extension ListViewController: FloatingPanelControllerDelegate {
 
 //MARK: - ContentVC Delegate
 extension ListViewController: ContentViewControllerDelegate {
-    func sortChanged(sortDirection: Int, sortType: Int) {
+    
+    func sortChanged(sortType: Int, sortDirection: Int) {
         allVehicles.removeAll()
-        getLists(pagination: true, sortDirection: sortDirection, sortType: sortType)
+        self.sortType = sortType
+        self.sortDirection = sortDirection
+        getLists()
+        fpc.move(to: .half, animated: true)
     }
     
-//    func filteredResults(sort: Int, sortDirection: Int, minDate: String?, maxDate: String?, minYear: Int?, maxYear: Int?, skip: Int?, take: Int) {
-//        //allVehicles.removeAll()
-//        print("sort: \(sort) sortDirection: \(sortDirection) minDate: \(minDate) maxDate: \(maxDate) minYear: \(minYear) maxYear: \(maxYear) skip: \(skip) take: \(take)")
-//    }
+    func filterChanged(sortType: Int, sortDirection: Int, minYear: Int?, maxyear: Int?, minDate: String?) {
+        allVehicles.removeAll()
+        self.sortType = sortType
+        self.sortDirection = sortDirection
+        self.maxYear = maxyear
+        self.minYear = minYear
+        self.minDate = minDate
+        getLists()
+        fpc.move(to: .tip, animated: true)
+    }
     
+
 }

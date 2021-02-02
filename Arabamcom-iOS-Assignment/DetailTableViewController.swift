@@ -73,8 +73,16 @@ class DetailTableViewController: UITableViewController {
             tableHeaderView.collectionView.dataSource = self
             tableHeaderView.collectionView.register(CollectionViewCell.nib(), forCellWithReuseIdentifier: CollectionViewCell.identifier)
          }
-        }
+    }
     
+    //MARK: - Navigation
+    private func goFullscreen(){
+        let fullscreenVC = FullScreenViewController()
+        fullscreenVC.vehicle = vehicle
+        fullscreenVC.modalPresentationStyle = .fullScreen
+        self.present(fullscreenVC, animated: true, completion: nil)
+        
+    }
     
     // MARK: - Table view data source
 
@@ -170,7 +178,7 @@ extension DetailTableViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //TODO: full screen
+        goFullscreen()
     }
     
 }

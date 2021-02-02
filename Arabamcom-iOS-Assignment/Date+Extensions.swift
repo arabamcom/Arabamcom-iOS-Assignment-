@@ -14,7 +14,7 @@ extension Date {
     }
     
     enum DateFilterSelection {
-        case lastDay, lastTwoDays, lastThreeDays, lastWeek, lastMonth
+        case lastDay, lastTwoDays, lastThreeDays, lastWeek, lastMonth, last45days, last60days, last90days
         var selectedDate: Date {
             switch self {
             case .lastDay:
@@ -27,17 +27,22 @@ extension Date {
                 return Date.calculateDate(date: Date(), day: 7)
             case .lastMonth:
                 return Date.calculateDate(date: Date(), day: 30)
-            
+            case .last45days:
+                return Date.calculateDate(date: Date(), day: 45)
+            case .last60days:
+                return Date.calculateDate(date: Date(), day: 60)
+            case .last90days:
+                return Date.calculateDate(date: Date(), day: 90)
             }
         }
     }
     
     
-    static func getMaxDate(dateSelection: DateFilterSelection) -> String {
-        return FormatterManager.shared.dateFormatterForRequest(date: dateSelection.selectedDate)
+    static func getMaxDate() -> String {
+        return FormatterManager.shared.dateFormatterForRequest(date: Date())
     }
     
-    static func getMinDate() -> String{
-        return FormatterManager.shared.dateFormatterForRequest(date: Date())
+    static func getMinDate(dateSelection: DateFilterSelection) -> String{
+        return FormatterManager.shared.dateFormatterForRequest(date: dateSelection.selectedDate)
     }
 }

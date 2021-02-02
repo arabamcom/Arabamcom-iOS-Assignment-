@@ -13,7 +13,7 @@ import Kingfisher
 class CollectionViewModel {
     var vehicle: VehicleDetailModel
     var imagesWithResolution: [String] = []
-    
+    var isInFullscreen = false
     
     init(vehicle: VehicleDetailModel) {
         self.vehicle = vehicle
@@ -22,7 +22,7 @@ class CollectionViewModel {
     var vehicleImagesResourceURL: [String] {
         if let imageURLs = vehicle.photos {
             for image in imageURLs.indices {
-                imagesWithResolution.append(imageURLs[image].replacingOccurrences(of: "{0}", with: "800x600"))
+                imagesWithResolution.append(isInFullscreen ? ResolutionManager.shared.convertUrlWithResolution(url: imageURLs[image], resolution: .middle) : ResolutionManager.shared.convertUrlWithResolution(url: imageURLs[image], resolution: .high))
             }
         }
         return imagesWithResolution
@@ -44,6 +44,13 @@ class CollectionViewModel {
         
     }
     
-    
+    func configureFullscreenCell(cell: FullscreenCollectionViewCell, indexPath: IndexPath){
+        isInFullscreen.toggle()
+        guard let url = URL(string: vehicleImagesResourceURL[indexPath.row]) else {return}
+        let resource = ImageResource(downloadURL: url)
+        cell.fullscreenImageView.kf.setImage(with: resource)
+        cell.imageCountLabel.text = "\(indexPath.row + 1) / \(imageCount)"
+        
+    }
     
 }

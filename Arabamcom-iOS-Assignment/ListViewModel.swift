@@ -19,7 +19,7 @@ class ListViewModel {
     
     var vehicleImageResourceURL: String {
         guard let imageURL = vehicles.photo else {return ""}
-        let imageURLWithResolution = imageURL.replacingOccurrences(of: "{0}", with: "120x90")
+        let imageURLWithResolution = ResolutionManager.shared.convertUrlWithResolution(url: imageURL, resolution: .small)
         return imageURLWithResolution
     }
     

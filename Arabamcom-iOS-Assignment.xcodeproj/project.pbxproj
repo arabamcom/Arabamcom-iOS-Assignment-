@@ -23,6 +23,11 @@
 		F010DA7225C735B500DC5F74 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA7025C735B500DC5F74 /* CollectionViewCell.swift */; };
 		F010DA7325C735B500DC5F74 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F010DA7125C735B500DC5F74 /* CollectionViewCell.xib */; };
 		F010DA7525C736CD00DC5F74 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA7425C736CD00DC5F74 /* CollectionViewModel.swift */; };
+		F010DA7925C8015800DC5F74 /* FullScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA7725C8015800DC5F74 /* FullScreenViewController.swift */; };
+		F010DA7A25C8015800DC5F74 /* FullScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F010DA7825C8015800DC5F74 /* FullScreenViewController.xib */; };
+		F010DA7E25C8038400DC5F74 /* FullscreenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA7C25C8038400DC5F74 /* FullscreenCollectionViewCell.swift */; };
+		F010DA7F25C8038400DC5F74 /* FullscreenCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F010DA7D25C8038400DC5F74 /* FullscreenCollectionViewCell.xib */; };
+		F010DA8125C80CEF00DC5F74 /* ResolutionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F010DA8025C80CEF00DC5F74 /* ResolutionManager.swift */; };
 		F0301ED325C4478300B16166 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0301ED125C4478300B16166 /* ContentViewController.swift */; };
 		F0301ED425C4478300B16166 /* ContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0301ED225C4478300B16166 /* ContentViewController.xib */; };
 		F0301ED725C44B1100B16166 /* MyFloatingPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0301ED625C44B1100B16166 /* MyFloatingPanelLayout.swift */; };
@@ -65,6 +70,11 @@
 		F010DA7025C735B500DC5F74 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F010DA7125C735B500DC5F74 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		F010DA7425C736CD00DC5F74 /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
+		F010DA7725C8015800DC5F74 /* FullScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenViewController.swift; sourceTree = "<group>"; };
+		F010DA7825C8015800DC5F74 /* FullScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullScreenViewController.xib; sourceTree = "<group>"; };
+		F010DA7C25C8038400DC5F74 /* FullscreenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenCollectionViewCell.swift; sourceTree = "<group>"; };
+		F010DA7D25C8038400DC5F74 /* FullscreenCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullscreenCollectionViewCell.xib; sourceTree = "<group>"; };
+		F010DA8025C80CEF00DC5F74 /* ResolutionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolutionManager.swift; sourceTree = "<group>"; };
 		F0301ED125C4478300B16166 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
 		F0301ED225C4478300B16166 /* ContentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentViewController.xib; sourceTree = "<group>"; };
 		F0301ED625C44B1100B16166 /* MyFloatingPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFloatingPanelLayout.swift; sourceTree = "<group>"; };
@@ -129,6 +139,7 @@
 		F010DA5B25C5FDF000DC5F74 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
+				F010DA7B25C8035A00DC5F74 /* Fullscreen CollectionView Cell */,
 				F010DA6F25C7358E00DC5F74 /* Collection View Cell */,
 				F0EFB34425C29A0B005445C7 /* List Cell */,
 				F010DA6025C5FE5C00DC5F74 /* Detail Cell */,
@@ -149,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				F010DA6425C6083500DC5F74 /* FormatterManager.swift */,
+				F010DA8025C80CEF00DC5F74 /* ResolutionManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -174,8 +186,19 @@
 		F010DA7625C800B800DC5F74 /* Full Screen VC */ = {
 			isa = PBXGroup;
 			children = (
+				F010DA7725C8015800DC5F74 /* FullScreenViewController.swift */,
+				F010DA7825C8015800DC5F74 /* FullScreenViewController.xib */,
 			);
 			name = "Full Screen VC";
+			sourceTree = "<group>";
+		};
+		F010DA7B25C8035A00DC5F74 /* Fullscreen CollectionView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F010DA7C25C8038400DC5F74 /* FullscreenCollectionViewCell.swift */,
+				F010DA7D25C8038400DC5F74 /* FullscreenCollectionViewCell.xib */,
+			);
+			name = "Fullscreen CollectionView Cell";
 			sourceTree = "<group>";
 		};
 		F0301ED025C4476900B16166 /* Content VC */ = {
@@ -400,12 +423,14 @@
 			files = (
 				F010DA6C25C7344B00DC5F74 /* ImageTableHeaderCollectionView.xib in Resources */,
 				F0EFB33425C297DA005445C7 /* LaunchScreen.storyboard in Resources */,
+				F010DA7F25C8038400DC5F74 /* FullscreenCollectionViewCell.xib in Resources */,
 				F010DA7325C735B500DC5F74 /* CollectionViewCell.xib in Resources */,
 				F010DA5F25C5FE5700DC5F74 /* DetailTableViewCell.xib in Resources */,
 				F0EFB33125C297DA005445C7 /* Assets.xcassets in Resources */,
 				F010DA5025C5F84E00DC5F74 /* DetailTableViewController.xib in Resources */,
 				F0301EDF25C44DEB00B16166 /* ListViewController.xib in Resources */,
 				F0301ED425C4478300B16166 /* ContentViewController.xib in Resources */,
+				F010DA7A25C8015800DC5F74 /* FullScreenViewController.xib in Resources */,
 				F0EFB32F25C297D8005445C7 /* Main.storyboard in Resources */,
 				F0EFB34825C29A24005445C7 /* ListTableViewCell.xib in Resources */,
 			);
@@ -465,8 +490,11 @@
 				F010DA7525C736CD00DC5F74 /* CollectionViewModel.swift in Sources */,
 				F010DA6E25C7346500DC5F74 /* ImageTableHeaderCollectionView.swift in Sources */,
 				F0EFB35925C2B715005445C7 /* NetworkConstants.swift in Sources */,
+				F010DA7925C8015800DC5F74 /* FullScreenViewController.swift in Sources */,
+				F010DA7E25C8038400DC5F74 /* FullscreenCollectionViewCell.swift in Sources */,
 				F010DA6225C606F500DC5F74 /* DetailViewModel.swift in Sources */,
 				F010DA7225C735B500DC5F74 /* CollectionViewCell.swift in Sources */,
+				F010DA8125C80CEF00DC5F74 /* ResolutionManager.swift in Sources */,
 				F010DA4925C56C7100DC5F74 /* UIBarButtonItem+Extensions.swift in Sources */,
 				F0EFB34725C29A24005445C7 /* ListTableViewCell.swift in Sources */,
 				F0301ED325C4478300B16166 /* ContentViewController.swift in Sources */,

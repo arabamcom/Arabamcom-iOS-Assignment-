@@ -9,8 +9,8 @@
 import UIKit
 
 protocol ContentViewControllerDelegate: class {
-    func sortChanged(sortDirection: Int, sortType: Int)
-   // func filteredResults(sort: Int, sortDirection: Int, minDate:String?, maxDate: String?, minYear: Int?, maxYear: Int?, skip: Int?, take: Int)
+    func sortChanged(sortType: Int ,sortDirection: Int)
+    func filterChanged(sortType: Int, sortDirection: Int, minYear: Int?, maxyear: Int?, minDate: String?)
 }
 
 class ContentViewController: UIViewController {
@@ -30,11 +30,19 @@ class ContentViewController: UIViewController {
     weak var delegate: ContentViewControllerDelegate?
     var sortDirection = true
     var selectedSegmentIndex = 0
-    var minYear = ""
-    var maxYear = ""
-    var isChanged = true
-    let dateSelections = ["Tarih Seç","Son 1 Gün", "Son 2 Gün", "Son 3 Gün", "Son 7 Gün", "Son 30 Gün"]
-    var selectedDateFilter: String = ""
+    var minYear: Int?
+    var maxYear: Int?
+    let dateSelections = ["Tarih Seç",
+                          "Son 1 Gün",
+                          "Son 2 Gün",
+                          "Son 3 Gün",
+                          "Son 7 Gün",
+                          "Son 30 Gün",
+                          "Son 45 Gün",
+                          "Son 60 Gün",
+                          "Son 90 Gün"]
+    var selectedDateFilter: String?
+    var selectedDate = 0
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -60,55 +68,73 @@ class ContentViewController: UIViewController {
     }
 
     //MARK: - Helper Methods
+    
+    
+    //MARK: - Actions
     @objc private func didTappedSortDirection(){
-
+        
         if sortDirection == true {
-            delegate?.sortChanged(sortDirection: 1, sortType: selectedSegmentIndex)
+            delegate?.sortChanged(sortType: selectedSegmentIndex, sortDirection: 1)
             sortDirection.toggle()
         } else {
-            delegate?.sortChanged(sortDirection: 0, sortType: selectedSegmentIndex)
+            delegate?.sortChanged(sortType: selectedSegmentIndex, sortDirection: 0)
             sortDirection.toggle()
         }
+
     }
    
     @objc private func didChangeSegment(sender: UISegmentedControl){
-                
+ 
         if sortDirection == false {
-            delegate?.sortChanged(sortDirection: 0, sortType: sender.selectedSegmentIndex)
+            delegate?.sortChanged(sortType: sender.selectedSegmentIndex, sortDirection: 0)
             selectedSegmentIndex = sender.selectedSegmentIndex
             sortDirection.toggle()
         } else if sortDirection == true {
-            delegate?.sortChanged(sortDirection: 1, sortType: sender.selectedSegmentIndex)
+            delegate?.sortChanged(sortType: sender.selectedSegmentIndex, sortDirection: 1)
             selectedSegmentIndex = sender.selectedSegmentIndex
             sortDirection.toggle()
         }
+
     }
     
     @objc private func didTappedChangeButton(){
-        minYear = minYearTextField.text ?? ""
-        maxYear = maxYearTextField.text ?? ""
-        
-        if isChanged == false {
-            maxYearTextField.text = minYear
-            minYearTextField.text = maxYear
-            maxYear = maxYearTextField.text ?? ""
-            minYear = minYearTextField.text ?? ""
-            
-            isChanged.toggle()
-        } else {
-            minYearTextField.text = maxYear
-            maxYearTextField.text = minYear
-            maxYear = maxYearTextField.text ?? ""
-            minYear = minYearTextField.text ?? ""
-            isChanged.toggle()
-        }
+        let tempMin = minYearTextField.text
+        minYearTextField.text = maxYearTextField.text
+        maxYearTextField.text = tempMin
     }
     
     @objc private func didTappedFilterButton(){
-//        guard let maximumYear = maxYearTextField.text else {return}
-//        guard let minimumYear = minYearTextField.text else {return}
-//        
-//        delegate?.filteredResults(sort: 0, sortDirection: 0, minDate: Date.getMinDate(), maxDate: selectedDateFilter, minYear: Int(minimumYear), maxYear: Int(maximumYear), skip: nil, take: 10)
+
+        if let minYearText = minYearTextField.text,
+            !minYearText.isEmpty,
+            let minYear = Int(minYearText) {
+            self.minYear = minYear
+        }
+        
+        if let maxYearText = maxYearTextField.text,
+            !maxYearText.isEmpty,
+            let maxYear = Int(maxYearText) {
+            self.maxYear = maxYear
+        }
+        
+        if sortDirection == false {
+            self.delegate?.filterChanged(sortType: selectedSegmentIndex,
+            sortDirection: 0,
+            minYear: self.minYear,
+            maxyear: self.maxYear,
+            minDate: self.selectedDateFilter)
+            sortDirection.toggle()
+        } else if sortDirection == true {
+            self.delegate?.filterChanged(sortType: selectedSegmentIndex,
+            sortDirection: 1,
+            minYear: self.minYear,
+            maxyear: self.maxYear,
+            minDate: self.selectedDateFilter)
+            sortDirection.toggle()
+        }
+        
+       
+        
     }
     
 
@@ -159,20 +185,28 @@ extension ContentViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         switch row {
         case 0:
             selectDateTextField.text = ""
+            selectedDateFilter = nil
         case 1:
-            selectedDateFilter = Date.getMaxDate(dateSelection: .lastDay)
+            selectedDateFilter = Date.getMinDate(dateSelection: .lastDay)
         case 2:
-            selectedDateFilter = Date.getMaxDate(dateSelection: .lastTwoDays)
+            selectedDateFilter = Date.getMinDate(dateSelection: .lastTwoDays)
         case 3:
-            selectedDateFilter = Date.getMaxDate(dateSelection: .lastThreeDays)
+            selectedDateFilter = Date.getMinDate(dateSelection: .lastThreeDays)
         case 4:
-            selectedDateFilter = Date.getMaxDate(dateSelection: .lastWeek)
+            selectedDateFilter = Date.getMinDate(dateSelection: .lastWeek)
         case 5:
-             selectedDateFilter = Date.getMaxDate(dateSelection: .lastMonth)
+             selectedDateFilter = Date.getMinDate(dateSelection: .lastMonth)
+        case 6:
+            selectedDateFilter = Date.getMinDate(dateSelection: .last45days)
+        case 7:
+            selectedDateFilter = Date.getMinDate(dateSelection: .last60days)
+        case 8:
+            selectedDateFilter = Date.getMinDate(dateSelection: .last90days)
         
         default:
             break
         }
+        
         
     }
     
