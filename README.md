@@ -10,8 +10,9 @@ A prototype arabam app using [Alamofire 5.3](https://github.com/Alamofire/Alamof
 
 ## Getting Started
 - Clone or download
-Build and Run
 - Pod install 
+- Build and Run
+
 
 ## Dependencies
  - Alamofire
