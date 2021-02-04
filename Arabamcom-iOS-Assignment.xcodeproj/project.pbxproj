@@ -119,108 +119,55 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		F010DA4C25C5F4E600DC5F74 /* Detail VC */ = {
+		F0276BBE25CC20DC00F64C79 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				F010DA4D25C5F84E00DC5F74 /* DetailTableViewController.swift */,
-				F010DA4E25C5F84E00DC5F74 /* DetailTableViewController.xib */,
+				F0EFB32725C297D8005445C7 /* AppDelegate.swift */,
 			);
-			name = "Detail VC";
+			path = App;
 			sourceTree = "<group>";
 		};
-		F010DA5125C5F88F00DC5F74 /* Custom Views */ = {
+		F0276BBF25CC20E800F64C79 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F010DA6A25C7341500DC5F74 /* ImageTableHeaderView */,
+				F0EFB35125C2B23E005445C7 /* VehiclesListModel.swift */,
+				F0EFB34F25C2B228005445C7 /* VehicleDetailModel.swift */,
 			);
-			name = "Custom Views";
+			path = Models;
 			sourceTree = "<group>";
 		};
-		F010DA5B25C5FDF000DC5F74 /* Custom Cells */ = {
+		F0276BC025CC210500F64C79 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				F010DA7B25C8035A00DC5F74 /* Fullscreen CollectionView Cell */,
-				F010DA6F25C7358E00DC5F74 /* Collection View Cell */,
-				F0EFB34425C29A0B005445C7 /* List Cell */,
-				F010DA6025C5FE5C00DC5F74 /* Detail Cell */,
+				F0EFB35425C2B30C005445C7 /* ServiceClient.swift */,
+				F0EFB35625C2B3D2005445C7 /* VehicleRouter.swift */,
+				F0EFB35825C2B715005445C7 /* NetworkConstants.swift */,
+				F0EFB35A25C2BDDF005445C7 /* VehicleClient.swift */,
 			);
-			name = "Custom Cells";
+			name = Network;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		F010DA6025C5FE5C00DC5F74 /* Detail Cell */ = {
+		F0276BC125CC214200F64C79 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				F010DA5C25C5FE5700DC5F74 /* DetailTableViewCell.swift */,
-				F010DA5D25C5FE5700DC5F74 /* DetailTableViewCell.xib */,
+				F0276BC225CC217B00F64C79 /* Managers */,
+				F0276BC325CC223B00F64C79 /* Extensions */,
+				F0301ED625C44B1100B16166 /* MyFloatingPanelLayout.swift */,
 			);
-			name = "Detail Cell";
+			path = Helpers;
 			sourceTree = "<group>";
 		};
-		F010DA6325C6082300DC5F74 /* Managers */ = {
+		F0276BC225CC217B00F64C79 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				F010DA6425C6083500DC5F74 /* FormatterManager.swift */,
 				F010DA8025C80CEF00DC5F74 /* ResolutionManager.swift */,
 			);
-			name = Managers;
+			path = Managers;
 			sourceTree = "<group>";
 		};
-		F010DA6A25C7341500DC5F74 /* ImageTableHeaderView */ = {
-			isa = PBXGroup;
-			children = (
-				F010DA6B25C7344B00DC5F74 /* ImageTableHeaderCollectionView.xib */,
-				F010DA6D25C7346500DC5F74 /* ImageTableHeaderCollectionView.swift */,
-			);
-			name = ImageTableHeaderView;
-			sourceTree = "<group>";
-		};
-		F010DA6F25C7358E00DC5F74 /* Collection View Cell */ = {
-			isa = PBXGroup;
-			children = (
-				F010DA7025C735B500DC5F74 /* CollectionViewCell.swift */,
-				F010DA7125C735B500DC5F74 /* CollectionViewCell.xib */,
-			);
-			name = "Collection View Cell";
-			sourceTree = "<group>";
-		};
-		F010DA7625C800B800DC5F74 /* Full Screen VC */ = {
-			isa = PBXGroup;
-			children = (
-				F010DA7725C8015800DC5F74 /* FullScreenViewController.swift */,
-				F010DA7825C8015800DC5F74 /* FullScreenViewController.xib */,
-			);
-			name = "Full Screen VC";
-			sourceTree = "<group>";
-		};
-		F010DA7B25C8035A00DC5F74 /* Fullscreen CollectionView Cell */ = {
-			isa = PBXGroup;
-			children = (
-				F010DA7C25C8038400DC5F74 /* FullscreenCollectionViewCell.swift */,
-				F010DA7D25C8038400DC5F74 /* FullscreenCollectionViewCell.xib */,
-			);
-			name = "Fullscreen CollectionView Cell";
-			sourceTree = "<group>";
-		};
-		F0301ED025C4476900B16166 /* Content VC */ = {
-			isa = PBXGroup;
-			children = (
-				F0301ED125C4478300B16166 /* ContentViewController.swift */,
-				F0301ED225C4478300B16166 /* ContentViewController.xib */,
-			);
-			name = "Content VC";
-			sourceTree = "<group>";
-		};
-		F0301ED525C44AF700B16166 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				F010DA6325C6082300DC5F74 /* Managers */,
-				F0301ED625C44B1100B16166 /* MyFloatingPanelLayout.swift */,
-				F0301ED825C44BAA00B16166 /* Extensions */,
-			);
-			name = Helpers;
-			sourceTree = "<group>";
-		};
-		F0301ED825C44BAA00B16166 /* Extensions */ = {
+		F0276BC325CC223B00F64C79 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				F0301ED925C44BC400B16166 /* FloatingPanel+Extensions.swift */,
@@ -230,16 +177,148 @@
 				F010DA6625C6EF2400DC5F74 /* Data+Extensions.swift */,
 				F010DA6825C6F11700DC5F74 /* StringProtocol+Extensions.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
-		F0301EDB25C44DD000B16166 /* List VC  */ = {
+		F0276BC425CC226800F64C79 /* Full Screen VC */ = {
+			isa = PBXGroup;
+			children = (
+				F010DA7725C8015800DC5F74 /* FullScreenViewController.swift */,
+				F010DA7825C8015800DC5F74 /* FullScreenViewController.xib */,
+			);
+			path = "Full Screen VC";
+			sourceTree = "<group>";
+		};
+		F0276BC525CC228C00F64C79 /* Detail VC */ = {
+			isa = PBXGroup;
+			children = (
+				F010DA4D25C5F84E00DC5F74 /* DetailTableViewController.swift */,
+				F010DA4E25C5F84E00DC5F74 /* DetailTableViewController.xib */,
+			);
+			path = "Detail VC";
+			sourceTree = "<group>";
+		};
+		F0276BC725CC22EE00F64C79 /* Content VC */ = {
+			isa = PBXGroup;
+			children = (
+				F0301ED125C4478300B16166 /* ContentViewController.swift */,
+				F0301ED225C4478300B16166 /* ContentViewController.xib */,
+			);
+			path = "Content VC";
+			sourceTree = "<group>";
+		};
+		F0276BC825CC230600F64C79 /* List VC */ = {
 			isa = PBXGroup;
 			children = (
 				F0301EDC25C44DEB00B16166 /* ListViewController.swift */,
 				F0301EDD25C44DEB00B16166 /* ListViewController.xib */,
 			);
-			name = "List VC ";
+			path = "List VC";
+			sourceTree = "<group>";
+		};
+		F0276BC925CC23A300F64C79 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0276BC525CC228C00F64C79 /* Detail VC */,
+				F0276BC425CC226800F64C79 /* Full Screen VC */,
+				F0276BC725CC22EE00F64C79 /* Content VC */,
+				F0276BC825CC230600F64C79 /* List VC */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		F0276BCA25CC23BA00F64C79 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F0276BCB25CC23D400F64C79 /* Custom Views */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F0276BCB25CC23D400F64C79 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				F0276BCD25CC240200F64C79 /* Custom Cells */,
+				F0276BCC25CC23E600F64C79 /* Image Table Header View */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		F0276BCC25CC23E600F64C79 /* Image Table Header View */ = {
+			isa = PBXGroup;
+			children = (
+				F010DA6B25C7344B00DC5F74 /* ImageTableHeaderCollectionView.xib */,
+				F010DA6D25C7346500DC5F74 /* ImageTableHeaderCollectionView.swift */,
+			);
+			path = "Image Table Header View";
+			sourceTree = "<group>";
+		};
+		F0276BCD25CC240200F64C79 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F0276BD125CC245300F64C79 /* Detail Cell */,
+				F0276BD025CC244400F64C79 /* List Cell */,
+				F0276BCF25CC243200F64C79 /* CollectionView Cell */,
+				F0276BCE25CC241B00F64C79 /* Fullscreen CollectionView Cell */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
+		F0276BCE25CC241B00F64C79 /* Fullscreen CollectionView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F010DA7C25C8038400DC5F74 /* FullscreenCollectionViewCell.swift */,
+				F010DA7D25C8038400DC5F74 /* FullscreenCollectionViewCell.xib */,
+			);
+			path = "Fullscreen CollectionView Cell";
+			sourceTree = "<group>";
+		};
+		F0276BCF25CC243200F64C79 /* CollectionView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F010DA7025C735B500DC5F74 /* CollectionViewCell.swift */,
+				F010DA7125C735B500DC5F74 /* CollectionViewCell.xib */,
+			);
+			path = "CollectionView Cell";
+			sourceTree = "<group>";
+		};
+		F0276BD025CC244400F64C79 /* List Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F0EFB34525C29A24005445C7 /* ListTableViewCell.swift */,
+				F0EFB34625C29A24005445C7 /* ListTableViewCell.xib */,
+			);
+			path = "List Cell";
+			sourceTree = "<group>";
+		};
+		F0276BD125CC245300F64C79 /* Detail Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F010DA5C25C5FE5700DC5F74 /* DetailTableViewCell.swift */,
+				F010DA5D25C5FE5700DC5F74 /* DetailTableViewCell.xib */,
+			);
+			path = "Detail Cell";
+			sourceTree = "<group>";
+		};
+		F0276BD225CC24B600F64C79 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0EFB35D25C2E4F9005445C7 /* ListViewModel.swift */,
+				F010DA6125C606F500DC5F74 /* DetailViewModel.swift */,
+				F010DA7425C736CD00DC5F74 /* CollectionViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		F0276BD325CC24CF00F64C79 /* View Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F0EFB32D25C297D8005445C7 /* Main.storyboard */,
+				F0EFB33025C297DA005445C7 /* Assets.xcassets */,
+				F0EFB33225C297DA005445C7 /* LaunchScreen.storyboard */,
+			);
+			name = "View Utilities";
+			path = "Vİew Utilities";
 			sourceTree = "<group>";
 		};
 		F0B9D9B9ABCB2D4CD3425060 /* Frameworks */ = {
@@ -271,94 +350,17 @@
 		F0EFB32625C297D8005445C7 /* Arabamcom-iOS-Assignment */ = {
 			isa = PBXGroup;
 			children = (
-				F0EFB33B25C29846005445C7 /* App */,
-				F0EFB34E25C2B215005445C7 /* Models */,
-				F0EFB35325C2B2A8005445C7 /* Network */,
-				F0301ED525C44AF700B16166 /* Helpers */,
-				F0EFB33D25C29968005445C7 /* View Controllers */,
-				F0EFB33E25C2997C005445C7 /* Views */,
-				F0EFB35C25C2E4E8005445C7 /* ViewModels */,
-				F0EFB33C25C29959005445C7 /* View Utilities */,
+				F0276BBE25CC20DC00F64C79 /* App */,
+				F0276BBF25CC20E800F64C79 /* Models */,
+				F0276BC025CC210500F64C79 /* Network */,
+				F0276BC125CC214200F64C79 /* Helpers */,
+				F0276BC925CC23A300F64C79 /* View Controllers */,
+				F0276BCA25CC23BA00F64C79 /* Views */,
+				F0276BD225CC24B600F64C79 /* View Models */,
+				F0276BD325CC24CF00F64C79 /* View Utilities */,
 				F0EFB33525C297DA005445C7 /* Info.plist */,
 			);
 			path = "Arabamcom-iOS-Assignment";
-			sourceTree = "<group>";
-		};
-		F0EFB33B25C29846005445C7 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				F0EFB32725C297D8005445C7 /* AppDelegate.swift */,
-			);
-			name = App;
-			sourceTree = "<group>";
-		};
-		F0EFB33C25C29959005445C7 /* View Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				F0EFB32D25C297D8005445C7 /* Main.storyboard */,
-				F0EFB33025C297DA005445C7 /* Assets.xcassets */,
-				F0EFB33225C297DA005445C7 /* LaunchScreen.storyboard */,
-			);
-			name = "View Utilities";
-			sourceTree = "<group>";
-		};
-		F0EFB33D25C29968005445C7 /* View Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				F010DA7625C800B800DC5F74 /* Full Screen VC */,
-				F010DA4C25C5F4E600DC5F74 /* Detail VC */,
-				F0301ED025C4476900B16166 /* Content VC */,
-				F0301EDB25C44DD000B16166 /* List VC  */,
-			);
-			name = "View Controllers";
-			sourceTree = "<group>";
-		};
-		F0EFB33E25C2997C005445C7 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				F010DA5125C5F88F00DC5F74 /* Custom Views */,
-				F010DA5B25C5FDF000DC5F74 /* Custom Cells */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		F0EFB34425C29A0B005445C7 /* List Cell */ = {
-			isa = PBXGroup;
-			children = (
-				F0EFB34525C29A24005445C7 /* ListTableViewCell.swift */,
-				F0EFB34625C29A24005445C7 /* ListTableViewCell.xib */,
-			);
-			name = "List Cell";
-			sourceTree = "<group>";
-		};
-		F0EFB34E25C2B215005445C7 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				F0EFB34F25C2B228005445C7 /* VehicleDetailModel.swift */,
-				F0EFB35125C2B23E005445C7 /* VehiclesListModel.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
-		F0EFB35325C2B2A8005445C7 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				F0EFB35425C2B30C005445C7 /* ServiceClient.swift */,
-				F0EFB35625C2B3D2005445C7 /* VehicleRouter.swift */,
-				F0EFB35825C2B715005445C7 /* NetworkConstants.swift */,
-				F0EFB35A25C2BDDF005445C7 /* VehicleClient.swift */,
-			);
-			name = Network;
-			sourceTree = "<group>";
-		};
-		F0EFB35C25C2E4E8005445C7 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				F0EFB35D25C2E4F9005445C7 /* ListViewModel.swift */,
-				F010DA6125C606F500DC5F74 /* DetailViewModel.swift */,
-				F010DA7425C736CD00DC5F74 /* CollectionViewModel.swift */,
-			);
-			name = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
