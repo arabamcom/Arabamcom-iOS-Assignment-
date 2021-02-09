@@ -40,7 +40,7 @@ class DetailViewModel {
         case 4:
             label.text = detailData.dateFormatted
         case 6:
-            label.text = text.html2String
+            label.attributedText = text.html2String
             ///case 5 is for properties
         case 7:
             label.text = detailData.userInfo?.nameSurname

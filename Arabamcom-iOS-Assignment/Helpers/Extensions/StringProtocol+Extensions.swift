@@ -12,7 +12,7 @@ extension StringProtocol {
     var html2AttributedString: NSAttributedString? {
         Data(utf8).html2AttributedString
     }
-    var html2String: String {
-        html2AttributedString?.string ?? ""
+    var html2String: NSAttributedString {
+        (html2AttributedString ?? NSAttributedString(string: "")) as NSAttributedString
     }
 }
