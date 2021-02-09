@@ -49,7 +49,7 @@ class CollectionViewModel {
         isInFullscreen.toggle()
         guard let url = URL(string: vehicleImagesResourceURL[indexPath.row]) else {return}
         let resource = ImageResource(downloadURL: url)
-        cell.fullscreenImageView.kf.setImage(with: resource)
+        cell.fullscreenImageView.kf.setImage(with: resource, options: [.memoryCacheExpiration(.seconds(900))])
         cell.imageCountLabel.text = "\(indexPath.row + 1)/\(imageCount)"
         
     }

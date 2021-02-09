@@ -47,6 +47,6 @@ extension ListViewModel {
         cell.priceLabel.text = price
         guard let url = URL(string: vehicleImageResourceURL) else {return}
         let resource = ImageResource(downloadURL: url)
-        cell.vehicleImageView.kf.setImage(with: resource)
+        cell.vehicleImageView.kf.setImage(with: resource, options: [.memoryCacheExpiration(.seconds(900))])
     }
 }
