@@ -63,24 +63,24 @@ extension DetailViewModel {
             switch TablePropertiesRows {
             case .Kilometer:
                 nameLabel?.text = "Kilometre"
-                let kmValue = properties.filter({$0.name == "km"})
-                valueLabel?.text = FormatterManager.shared.kmFormatter(km: kmValue.first?.value)
+                let value = properties.filter({$0.name == "km"})
+                valueLabel?.text = FormatterManager.shared.kmFormatter(km: value.first?.value)
             case .Color:
                 nameLabel?.text = "Rengi"
-                let colorValue = properties.filter({$0.name == "color"})
-                valueLabel?.text = colorValue.first?.value
+                let value = properties.filter({$0.name == "color"})
+                valueLabel?.text = value.first?.value
             case .ModelYear:
                 nameLabel?.text = "Model Yılı"
-                let colorValue = properties.filter({$0.name == "year"})
-                valueLabel?.text = colorValue.first?.value
+                let value = properties.filter({$0.name == "year"})
+                valueLabel?.text = value.first?.value
             case .GearType:
                 nameLabel?.text = "Vites Türü"
-                let colorValue = properties.filter({$0.name == "gear"})
-                valueLabel?.text = colorValue.first?.value
+                let value = properties.filter({$0.name == "gear"})
+                valueLabel?.text = value.first?.value
             case .FuelType:
                 nameLabel?.text = "Yakıt Türü"
-                let colorValue = properties.filter({$0.name == "fuel"})
-                valueLabel?.text = colorValue.first?.value
+                let value = properties.filter({$0.name == "fuel"})
+                valueLabel?.text = value.first?.value
             }
         }
     }
