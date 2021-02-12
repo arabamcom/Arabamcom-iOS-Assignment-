@@ -47,6 +47,8 @@
 		F0EFB35925C2B715005445C7 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB35825C2B715005445C7 /* NetworkConstants.swift */; };
 		F0EFB35B25C2BDDF005445C7 /* VehicleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB35A25C2BDDF005445C7 /* VehicleClient.swift */; };
 		F0EFB35E25C2E4F9005445C7 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EFB35D25C2E4F9005445C7 /* ListViewModel.swift */; };
+		F0F8E4AD25D67458004D16D1 /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8E4AC25D67458004D16D1 /* TableSection.swift */; };
+		F0F8E4AF25D67BAB004D16D1 /* TablePropertiesRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8E4AE25D67BAB004D16D1 /* TablePropertiesRows.swift */; };
 		F9B4C28B126D3EC9723FDC6B /* Pods_Arabamcom_iOS_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE283BB4908EEB8CCD25819B /* Pods_Arabamcom_iOS_Assignment.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +98,8 @@
 		F0EFB35825C2B715005445C7 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		F0EFB35A25C2BDDF005445C7 /* VehicleClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleClient.swift; sourceTree = "<group>"; };
 		F0EFB35D25C2E4F9005445C7 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		F0F8E4AC25D67458004D16D1 /* TableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
+		F0F8E4AE25D67BAB004D16D1 /* TablePropertiesRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePropertiesRows.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,8 @@
 				F0276BC225CC217B00F64C79 /* Managers */,
 				F0276BC325CC223B00F64C79 /* Extensions */,
 				F0301ED625C44B1100B16166 /* MyFloatingPanelLayout.swift */,
+				F0F8E4AC25D67458004D16D1 /* TableSection.swift */,
+				F0F8E4AE25D67BAB004D16D1 /* TablePropertiesRows.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -493,6 +499,7 @@
 				F010DA6E25C7346500DC5F74 /* ImageTableHeaderCollectionView.swift in Sources */,
 				F0EFB35925C2B715005445C7 /* NetworkConstants.swift in Sources */,
 				F010DA7925C8015800DC5F74 /* FullScreenViewController.swift in Sources */,
+				F0F8E4AD25D67458004D16D1 /* TableSection.swift in Sources */,
 				F010DA7E25C8038400DC5F74 /* FullscreenCollectionViewCell.swift in Sources */,
 				F010DA6225C606F500DC5F74 /* DetailViewModel.swift in Sources */,
 				F010DA7225C735B500DC5F74 /* CollectionViewCell.swift in Sources */,
@@ -504,6 +511,7 @@
 				F0EFB35725C2B3D2005445C7 /* VehicleRouter.swift in Sources */,
 				F010DA6525C6083500DC5F74 /* FormatterManager.swift in Sources */,
 				F0301ED725C44B1100B16166 /* MyFloatingPanelLayout.swift in Sources */,
+				F0F8E4AF25D67BAB004D16D1 /* TablePropertiesRows.swift in Sources */,
 				F0301EDE25C44DEB00B16166 /* ListViewController.swift in Sources */,
 				F010DA4B25C59F0900DC5F74 /* Date+Extensions.swift in Sources */,
 				F0EFB35225C2B23E005445C7 /* VehiclesListModel.swift in Sources */,

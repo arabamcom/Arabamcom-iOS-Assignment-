@@ -17,7 +17,7 @@ class DetailViewModel {
         self.detailData = detailData
     }
     
-    func configure(with standartCell: UITableViewCell, indexPath: IndexPath) {
+    func configure(with standartCell: UITableViewCell, TableSection: TableSections) {
         guard let label = standartCell.textLabel else {return}
         label.numberOfLines = 0
         
@@ -26,25 +26,25 @@ class DetailViewModel {
         guard let id = detailData.id else {return}
         guard let text = detailData.text else {return}
         
-        switch indexPath.section {
-        case 0:
+        switch TableSection {
+        case .ModelName:
             label.text = detailData.modelName
-        case 1:
+        case .Price:
             label.text = FormatterManager.shared.numberFormatter(price: detailData.price)
             label.textColor = .systemRed
             label.font = UIFont(name: "HelveticaNeue-Medium", size: 17)
-        case 2:
+        case .Address:
             label.text = "\(cityName), \(townName)"
-        case 3:
+        case .AdvertNum:
             label.text = "\(id)"
-        case 4:
+        case .AdvertDate:
             label.text = detailData.dateFormatted
-        case 6:
+        ///case .Properties is configurated down below with DetailTableViewCell
+        case .Explanation:
             label.attributedText = text.html2String
-            ///case 5 is for properties
-        case 7:
+        case .Name:
             label.text = detailData.userInfo?.nameSurname
-        case 8:
+        case .Phone:
             label.text = detailData.userInfo?.phoneFormatted
         default:
             break
@@ -53,39 +53,34 @@ class DetailViewModel {
 }
 
 extension DetailViewModel {
-    func configure(with detailCell: DetailTableViewCell, indexPath: IndexPath) {
+    func configure(with detailCell: DetailTableViewCell, TableSection: TableSections, TablePropertiesRows: PropertiesRows) {
         let nameLabel = detailCell.propertiesLabel
         let valueLabel = detailCell.valueLabel
         
         guard let properties = detailData.properties else {return}
         
-        
-        for propertie in properties.indices {
-            if indexPath.row == propertie {
-                let propertyName = properties[indexPath.row].name
-                let propertyValue = properties[indexPath.row].value
-                
-                switch propertyName {
-                case "km":
-                    nameLabel?.text = propertyName?.replacingOccurrences(of: "km", with: "Kilometre")
-                case "color":
-                     nameLabel?.text = propertyName?.replacingOccurrences(of: "color", with: "Rengi")
-                case "year":
-                    nameLabel?.text = propertyName?.replacingOccurrences(of: "year", with: "Model Yılı")
-                case "gear":
-                    nameLabel?.text = propertyName?.replacingOccurrences(of: "gear", with: "Vites")
-                case "fuel":
-                    nameLabel?.text = propertyName?.replacingOccurrences(of: "fuel", with: "Yakıt")
-                default:
-                    break
-                }
-                
-                if indexPath.row == 0 {
-                    valueLabel?.text = "\(FormatterManager.shared.kmFormatter(km: properties[0].value))"
-                } else {
-                    valueLabel?.text = "\(propertyValue ?? "")"
-                }
-                
+        if TableSection == .Properties {
+            switch TablePropertiesRows {
+            case .Kilometer:
+                nameLabel?.text = "Kilometre"
+                let kmValue = properties.filter({$0.name == "km"})
+                valueLabel?.text = FormatterManager.shared.kmFormatter(km: kmValue.first?.value)
+            case .Color:
+                nameLabel?.text = "Rengi"
+                let colorValue = properties.filter({$0.name == "color"})
+                valueLabel?.text = colorValue.first?.value
+            case .ModelYear:
+                nameLabel?.text = "Model Yılı"
+                let colorValue = properties.filter({$0.name == "year"})
+                valueLabel?.text = colorValue.first?.value
+            case .GearType:
+                nameLabel?.text = "Vites Türü"
+                let colorValue = properties.filter({$0.name == "gear"})
+                valueLabel?.text = colorValue.first?.value
+            case .FuelType:
+                nameLabel?.text = "Yakıt Türü"
+                let colorValue = properties.filter({$0.name == "fuel"})
+                valueLabel?.text = colorValue.first?.value
             }
         }
     }

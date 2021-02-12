@@ -16,8 +16,9 @@ class DetailTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-    /// all 'i's are capital because section titles are capital and İ's seems like 'I'
-    let sectionTitles = ["Model Adı", "Fİyat", "Adres", "İlan No", "İlan Tarİhİ", "Özellİkler", "Açıklama", "İsİm", "Telefon"]
+    
+    var sections: [TableSections] = [.ModelName, .Price, .Address, .AdvertNum, .AdvertDate, .Properties, .Explanation, .Name, .Phone]
+    var propertieRows: [PropertiesRows] = [.Kilometer, .Color, .ModelYear, .GearType, .FuelType, .Kilometer]
     
     let label: UILabel = {
         let navLabel = UILabel()
@@ -37,8 +38,7 @@ class DetailTableViewController: UITableViewController {
         
         navigationItem.titleView = label
         tableView.register(DetailTableViewCell.nib(), forCellReuseIdentifier: DetailTableViewCell.identifier)
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 60
+        configureTableView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -73,6 +73,14 @@ class DetailTableViewController: UITableViewController {
          }
     }
     
+    private func configureTableView() {
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 60
+        sections.forEach { (section) in
+            section.register(tableView: tableView)
+        }
+    }
+    
     //MARK: - Navigation
     private func goFullscreen(){
         let fullscreenVC = FullScreenViewController()
@@ -86,56 +94,47 @@ class DetailTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 9
+        return sections.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        guard let properties = vehicle?.properties?.count else {return 0}
-        switch section {
-        case 0,1,2,3,4,6,7,8:
-            return 1
-        case 5:
-            return properties
-        default:
-            break
-        }
-        return 1
+     
+        return sections[section].numberOfItems(propertiesRows: propertieRows)
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        switch indexPath.section {
-        case 0,1,2,3,4,6,7,8:
+        switch sections[indexPath.section] {
+        case .ModelName,.Price, .Address, .AdvertNum, .AdvertDate, .Explanation, .Name, .Phone:
             let cell = UITableViewCell()
             if let vehicle = vehicle {
                 let detailViewModel = DetailViewModel(detailData: vehicle)
-                detailViewModel.configure(with: cell, indexPath: indexPath)
+
+                detailViewModel.configure(with: cell, TableSection: sections[indexPath.section])
             }
             cell.selectionStyle = .none
             return cell
-        case 5:
+        case .Properties:
             let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as! DetailTableViewCell
             if let vehicle = vehicle {
                 let detailViewModel = DetailViewModel(detailData: vehicle)
-                detailViewModel.configure(with: cell, indexPath: indexPath)
+
+                detailViewModel.configure(with: cell, TableSection: sections[indexPath.section], TablePropertiesRows: propertieRows[indexPath.row])
             }
             cell.selectionStyle = .none
             return cell
-        default:
-            break
         }
-        return UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionTitles[section]
+        return sections[section].sectionTitle()
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
        
-        if indexPath.section == 8 {
+        if sections[indexPath.section] == .Phone {
             ///Swipe to call
             let callAction = UIContextualAction(style: .normal, title: nil) { (_, _, completion) in
                 guard let phone = self.vehicle?.userInfo?.phone else {return}
@@ -159,6 +158,7 @@ class DetailTableViewController: UITableViewController {
         }
 }
 
+//MARK: - Collection View Delegate & Datasource
 extension DetailTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return vehicle?.photos?.count ?? 1
