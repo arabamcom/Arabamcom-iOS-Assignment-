@@ -18,7 +18,7 @@ class DetailTableViewController: UITableViewController {
     }
     
     var sections: [TableSections] = [.ModelName, .Price, .Address, .AdvertNum, .AdvertDate, .Properties, .Explanation, .Name, .Phone]
-    var propertieRows: [PropertiesRows] = [.Kilometer, .Color, .ModelYear, .GearType, .FuelType, .Kilometer]
+    var propertieRows: [PropertiesRows] = [.Kilometer, .Color, .ModelYear, .GearType, .FuelType]
     
     let label: UILabel = {
         let navLabel = UILabel()
